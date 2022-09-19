@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+/* HTML */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #333333;
+  color: white;
+}
+
+
+/* button{
+  max-width: 30%;
+} */
