@@ -15,8 +15,7 @@ module.exports = {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
       console.log(`These are your posts ${posts}`)
-      // const postId = await Post.fin
-      // const comments = await Comment.find()
+      
 
       res.render("feed.ejs", { posts: posts });
     } catch (err) {
@@ -44,6 +43,7 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        numOfComments: 0
       });
       console.log("Post has been added!");
       res.redirect("/profile");
@@ -70,6 +70,9 @@ module.exports = {
       // Find post by id
       let post = await Post.findById({ _id: req.params.id }); //Post is the model. find the post using the id from the url (this makes sure the post exists before you 'destroy' it)
       // Delete image from cloudinary
+
+      //TODO delete all comments associated with post when post deletes
+
       await cloudinary.uploader.destroy(post.cloudinaryId); //post declared above. This line is to get rid of the picture on cloudinary
       // Delete post from db
       await Post.remove({ _id: req.params.id }); //Post is the model, here we remove the post from the collection
