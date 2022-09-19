@@ -13,7 +13,11 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean(); //Post is the model (required above), .lean() ()is mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
+      const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
+      console.log(`These are your posts ${posts}`)
+      // const postId = await Post.fin
+      // const comments = await Comment.find()
+
       res.render("feed.ejs", { posts: posts });
     } catch (err) {
       console.log(err);
