@@ -29,6 +29,10 @@ const PostSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User", //here we are referencing our "User" model from our User schema
   },
+  createdBy:{
+    type: String,
+    ref: "User", 
+  },
   createdAt: {
     type: Date,
     default: Date.now,

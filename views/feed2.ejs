@@ -1,0 +1,51 @@
+<%- include('partials/header') -%>
+
+<section class="p-5">
+  <div class="container">
+
+    <div class="row g-4 align-items-center">
+
+      <% for(var i=0; i<posts.length; i++) {%>
+      <div class="col-md">
+        <div class="card bg-light ">
+
+          <div class="card-body text-dark">
+
+            <h2 class="card-title mb-1 text-center"><%= posts[i].title %></h2>
+
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+
+            <!-- working on this div at quiting time 745p -->
+            <div class="d-flex justify-content-between"> 
+              <span class="text-capitalize fst-italic mx-1">User:&nbsp; <%= posts[i].createdBy %></span>
+  
+              <span class="col fa fa-heart text-end ">&nbsp; <%= posts[i].likes%></span>
+  
+              <span class="col fa fa-comment text-end ">&nbsp; <%= posts[i].numOfComments%></span>
+
+            </div>
+
+            <p class="card-text"></p>
+
+            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+
+          </div>
+
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<%- include('partials/footer') -%>
