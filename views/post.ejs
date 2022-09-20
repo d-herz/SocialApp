@@ -28,7 +28,16 @@
         </form>
         <%}%>
 
+        
         <p class="text-center"><%= post.caption %></p>
+        
+        <!--TODO Adding ability to edit post caption--->
+        <%if(post.user == user.id){ %> 
+          <form action="/post/editPostCaption/<%= post.id %>?_method=PUT" method="POST" class="col-3"> 
+            <button class="btn btn-primary" type="submit"><i class="fa-solid fa-pen-to-square">Edit Caption</i></button>
+          </form>
+
+        <%}%>
         
       </div>
     </div>

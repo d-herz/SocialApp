@@ -6,7 +6,7 @@ module.exports = {
   createComment: async (req, res) => {
     try {
       
-      //trying to add a count of comments for display purposes on feed
+      //Adding incrementor for updating numOfComments property on post
       const post = await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
@@ -44,13 +44,9 @@ module.exports = {
   deleteComment: async (req, res) => {
     try {
 
-      
-
       const comment = await Comment.findById({ _id: req.params.id }); //the .id is our choice, could do commentId (and be sure to specify in EJS and also put it in the router path)
 
-
-      //adding a decrementor for comment count
-
+      //adding a decrementor for updating numOfComments property on post
       const post = await Post.findOneAndUpdate(
         { _id: comment.post },
         {
@@ -61,7 +57,7 @@ module.exports = {
       await Comment.deleteOne({ _id: req.params.id }); 
       console.log("Deleted Comment");
       console.log(comment)
-      res.redirect(`/post/${comment.post}`); //<---- this is the change that worked
+      res.redirect(`/post/${comment.post}`); 
     } catch (err) {
       // res.redirect(`/post/${req.params.id}`);
       console.log(err)

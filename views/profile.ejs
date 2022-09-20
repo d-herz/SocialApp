@@ -62,7 +62,7 @@
           <span class="col fa fa-heart">&nbsp <%= posts[i].likes%></span>
           <span class="col fa fa-comment">&nbsp <%= posts[i].numOfComments%></span>
 
-          <form action="/post/deletePost/<%= posts[i].id %>?_method=DELETE" method="POST" class="col-3"> 
+          <form action="/post/deletePost/<%= posts[i].id %>?_method=DELETE" method="POST" class="d-inline col"> 
             <button class="btn btn-primary fa fa-trash" type="submit"></button>
           </form>
 

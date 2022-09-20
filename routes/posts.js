@@ -12,6 +12,14 @@ router.post("/createPost", upload.single("file"), postsController.createPost); /
 
 router.put("/likePost/:id", postsController.likePost);
 
+//TODO working on adding ability to edit caption (not working yet)
+router.put("/editPostCaption/:id", postsController.editCaption)
+
+
+
 router.delete("/deletePost/:id", postsController.deletePost);
+
+
+
 
 module.exports = router;

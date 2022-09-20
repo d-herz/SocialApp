@@ -6,7 +6,7 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      const post = await Post.find({ user: req.user.id });
+      
       res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
@@ -66,13 +66,28 @@ module.exports = {
       console.log(err);
     }
   },
+
+  //TODO add abiity to "update" (edit) post title and caption
+  editCaption: async (req, res) => {
+    try{
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        { caption: req.body.caption },
+      )
+
+
+    } catch (err) {
+
+
+    }
+  },
   deletePost: async (req, res) => {
     try {
       // Find post by id
       let post = await Post.findById({ _id: req.params.id }); //Post is the model. find the post using the id from the url (this makes sure the post exists before you 'destroy' it)
       // Delete image from cloudinary
 
-      //TODO delete all comments associated with post when post deletes
+      //find comments associated with post and delete along with post
       const comments = await Comment.deleteMany({post: req.params.id})
 
       await cloudinary.uploader.destroy(post.cloudinaryId); //post declared above. This line is to get rid of the picture on cloudinary

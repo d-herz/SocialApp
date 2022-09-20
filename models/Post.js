@@ -25,10 +25,6 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  // numOfComments: { //trying to count number of comments for display
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "Comment", //here we are referencing our "Comment" model from our Comment schema?
-  // },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User", //here we are referencing our "User" model from our User schema
