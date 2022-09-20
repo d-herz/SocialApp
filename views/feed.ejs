@@ -17,7 +17,9 @@
               
             </a>
             
-            <p class="fa fa-heart"><%= posts[i].likes%></p>
+            <span class="col fa fa-heart">&nbsp <%= posts[i].likes%></span>
+            <span class="col fa fa-comment">&nbsp <%= posts[i].numOfComments%></span>
+            
             
           </li>
         <% } %>

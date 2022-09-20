@@ -72,6 +72,7 @@ module.exports = {
       // Delete image from cloudinary
 
       //TODO delete all comments associated with post when post deletes
+      const comments = await Comment.deleteMany({post: req.params.id})
 
       await cloudinary.uploader.destroy(post.cloudinaryId); //post declared above. This line is to get rid of the picture on cloudinary
       // Delete post from db
