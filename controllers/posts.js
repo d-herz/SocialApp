@@ -7,12 +7,11 @@ module.exports = {
     try {
       const posts = await Post.find({ user: req.user.id });
       
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      res.render("profile2.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
-  //TODO testing new feed below
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
@@ -24,18 +23,6 @@ module.exports = {
       console.log(err);
     }
   },
-//TODO testing new feed above
-  // getFeed: async (req, res) => {
-  //   try {
-  //     const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
-  //     console.log(`These are your posts ${posts}`)
-      
-
-  //     res.render("feed.ejs", { posts: posts });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id); //.id is the variable from the route
