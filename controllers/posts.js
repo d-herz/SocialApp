@@ -5,7 +5,7 @@ const Comment = require("../models/Comment");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      const posts = await Post.find({ user: req.user.id });
+      const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" });
       
       res.render("profile2.ejs", { posts: posts, user: req.user });
     } catch (err) {
