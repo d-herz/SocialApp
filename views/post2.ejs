@@ -15,14 +15,14 @@
       <!-- Card For Post -->
       <div class="m-4">
         <div class="card bg-light ">
-          <div class="card-body text-dark py-1 ">
+          <div class="card-body text-dark py-1 text-center">
 
             <!-- Post Title -->
             <h2 class="card-title mb-1 text-center">
               <%= post.title %>
             </h2>
             <!-- Date and Time  -->
-            <span class="text-capitalize fst-italic mx-1 fs-5 text-center ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
+            <span class="text-capitalize fst-italic mx-1 fs-5  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
             <!-- Post Image -->
             <img class="img-fluid" src="<%= post.image%>" alt="">
   
