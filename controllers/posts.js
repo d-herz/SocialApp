@@ -43,9 +43,10 @@ module.exports = {
         cloudinaryId: result.public_id,
         caption: req.body.caption,
         likes: 0,
+        numOfComments: 0,
         user: req.user.id,
         createdBy: req.user.userName,
-        numOfComments: 0,
+      
       });
       console.log("Post has been added!");
       res.redirect("/profile");

@@ -44,7 +44,7 @@
               <h2 class="card-title mb-1 text-center"><%= posts[i].title %></h2>
 
               <!-- Post Image -->
-              <a href="/post/<%= posts[i]._id%>">
+              <a href="/post/<%= posts[i]._id%>" class="d-flex justify-content-center">
                 <img class="img-fluid" src="<%= posts[i].image%>">
               </a>
 
@@ -88,7 +88,7 @@
 
         <div class="modal-body">
 
-          <form action="/post/createPost" enctype="multipart/form-data" method="POST" class=""> <!---enctype is for multer to work-->
+          <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="" id="create-post"> <!---enctype is for multer to work-->
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text" class="form-control" id="title" name="title">
@@ -103,45 +103,13 @@
               <label for="imgUpload" class="form-label">Image</label>
               <input type="file" class="form-control" id="imageUpload" name="file">
             </div>
-  
-            <div class="mb-3 d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary m-auto" value="Upload">Submit</button>
-            </div>
           </form>
-
-
-
-
-
-          <!-- <p class="lead">Fill out this form and we will get back to you</p>
-          <form action="">
-
-            <div class="mb-3">
-              <label for="first-name" class="col-form-label">First Name:</label>
-              <input type="text" class="form-control" id="first-name">
-            </div>
-
-            <div class="mb-3">
-              <label for="last-name" class="col-form-label">Last Name:</label>
-              <input type="text" class="form-control" id="first-name">
-            </div>
-
-            <div class="mb-3">
-              <label for="email" class="col-form-label">Email:</label>
-              <input type="text" class="form-control" id="first-name">
-            </div>
-
-            <div class="mb-3">
-              <label for="phone" class="col-form-label">Phone:</label>
-              <input type="text" class="form-control" id="first-name">
-            </div>
-
-          </form> -->
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
+
+          <button type="submit" class="btn btn-primary" value="Upload" form="create-post">Submit</button>
         </div>
 
       </div>
