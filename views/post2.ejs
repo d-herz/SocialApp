@@ -29,7 +29,7 @@
             <!-- Container for Like button/form  -->
             <div class="d-flex justify-content-between text-center mt-2">
               <!-- LIke Button -->
-              <form class="col-2" action="/post/likePost <%= post.id %>?_method=PUT" method="POST">
+              <form class="col-2" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
                 <button class="btn btn-primary fa fa-heart" type="submit"><%= post.likes %> </button>
               </form>
               
@@ -48,7 +48,15 @@
             </div>
           </div>
         </div>
+      </div>
       <!-- End of Post Card -->
+
+      <!-- Add Comment (open modal) -->
+      <div class="d-flex justify-content-between m-4">
+        <h2 class="card-title mb-1 text-center text-light">
+          Comments:
+        </h2>
+        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#addComment">Add Comment</button>
       </div>
 
       <!-- Card For  Comments -->
@@ -73,14 +81,10 @@
                 <form action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE" method="POST" > 
                   <button class="btn btn-danger fa fa-trash" type="submit"></button>
                 </form>
-              <%}%>
-              
-
-  
+              <%}%>       
             </div>
 
           </div>
-
 
         </div>
 
@@ -94,5 +98,47 @@
 
   </div>
 </section>
+
+
+<!-- MODAL FOR COMMENT CREATION -->
+<div class="modal fade" id="addComment" tabindex="-1" >
+  <div class="modal-dialog">
+
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Comment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+
+      <div class="modal-body">
+
+        <form action="/comment/createComment/<%=post._id%>" method="POST" class="" id="create-comment"> 
+          <div class="mb-3">
+            <label for="Comment" class="form-label">Comment</label>
+            <input type="text" class="form-control" id="comment" name="comment">
+          </div>
+
+          <!-- <div class="mb-3">
+            <label for="caption" class="form-label">Caption</label>
+            <textarea class="form-control" id="caption" name="caption"></textarea>
+          </div> -->
+
+          <!-- <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div> -->
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <button type="submit" class="btn btn-primary" value="Upload" form="create-comment">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <%- include('partials/footer') -%>
