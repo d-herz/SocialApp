@@ -1,5 +1,98 @@
 <%- include('partials/header') -%>
 
+<section class="p-3 p-sm-4 p-lg-5">
+  <div class="container-md">
 
+    <!-- Return to feed & Profile buttons -->
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary w-25 mx-2" href="/profile">Return to Profile</a>
+      <a class="btn btn-primary w-25 mx-2" href="/feed">Return to Feed</a>
+    </div> 
+
+    <!-- Post Container  -->
+    <div class="col g-4 align-items-center mt-5">
+
+      <!-- Card For Post -->
+      <div class="m-4">
+        <div class="card bg-light ">
+          <div class="card-body text-dark py-1 ">
+
+            <!-- Post Title -->
+            <h2 class="card-title mb-1 text-center">
+              <%= post.title %>
+            </h2>
+            <!-- Date and Time  -->
+            <span class="text-capitalize fst-italic mx-1 fs-5 text-center ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
+            <!-- Post Image -->
+            <img class="img-fluid" src="<%= post.image%>" alt="">
+  
+            <!-- Container for Like button/form  -->
+            <div class="d-flex justify-content-between text-center mt-2">
+              <!-- LIke Button -->
+              <form class="col-2" action="/post/likePost <%= post.id %>?_method=PUT" method="POST">
+                <button class="btn btn-primary fa fa-heart" type="submit"><%= post.likes %> </button>
+              </form>
+              
+              <!-- Delete Button (if logged in user's post) -->
+              <%if(post.user == user.id){ %>
+                <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
+                  <button class="btn btn-danger fa fa-trash" type="submit"></button>
+                </form>
+                <%}%>
+  
+  
+            </div>
+            <!-- Div for caption -->
+            <div>
+              <p class="text-center h3"><%= post.caption %></p>
+            </div>
+          </div>
+        </div>
+      <!-- End of Post Card -->
+      </div>
+
+      <!-- Card For  Comments -->
+      <% for(var i=0; i<comments.length; i++) {%>
+      <div class="m-4 ">
+        <div class="card bg-light ">
+          <div class="card-body text-dark py-1 ">
+
+            <!-- Comment Div -->
+            <div class="">
+              <span>Comment by:</span> <span class="text-capitalize fst-italic"> <%= comments[i].createdBy%>, <%= comments[i].createdAt.toLocaleDateString()%> @ <%= comments[i].createdAt.toLocaleTimeString()%></span>
+              <h5>"<%= comments[i].comment%>"</h5>
+            </div>
+  
+            <!-- Likes (& deletes?) -->
+            <div class="d-flex">
+              <form class="" action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT" method="POST">
+                <button class="btn btn-primary fa fa-heart" type="submit"><%= comments[i].likes %></button>
+              </form>
+              <!-- delete function -->
+              <%if(comments[i].createdById == user.id){ %>
+                <form action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE" method="POST" > 
+                  <button class="btn btn-danger fa fa-trash" type="submit"></button>
+                </form>
+              <%}%>
+              
+
+  
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+      <% } %>
+
+
+
+    <!-- end of post card -->
+    </div> 
+
+  </div>
+</section>
 
 <%- include('partials/footer') -%>
