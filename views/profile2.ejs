@@ -4,26 +4,28 @@
   <div class="container-md">
 
     
-    <!-- Return To feed button -->
+    <!-- Return To feed & Logout button -->
     <div class="row justify-content-center mt-5">
-      <a class="btn btn-primary w-25" href="/feed">Return to Feed</a>
+      <a class="btn btn-primary w-25 mx-2" href="/feed">Return to Feed</a>
+      <a href="/logout" class="col-3 btn btn-primary mx-2">Logout</a>
     </div> 
 
     <!-- User Info and Logout -->
-    <div class="row justify-content-center mt-5 text-center text-light">
-      <p class="text-capitalize "><strong>User Name</strong>: <%= user.userName %></p>
+    <div class="row justify-content-center mt-4 text-center text-light">
+      <h2 class="text-center m-1 text-light">Welcome to your Profile!</h2>
+      <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p>
           <p><strong>Email</strong>: <%= user.email %></p>
-          <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
     </div>
 
-    <!-- Add Post Button (opens modal) -->
-    <div class="d-flex justify-content-center my-5">
+    <!-- Create Post Button (opens modal) -->
+    <div class="d-flex justify-content-center my-3">
       <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">Create Post</button>
     </div>
     
 
     <!-- "Your Posts" Container -->
-    <div class="col g-4 align-items-center">
+    <div class="col g-4 align-items-center mt-5">
       <h2 class="text-center mt-3 mb-0 text-light">My Posts</h2>
       
       <!-- Conditional for counting posts -->
@@ -48,8 +50,10 @@
                 <img class="img-fluid" src="<%= posts[i].image%>">
               </a>
 
-              <!-- Likes/Comments Count, Delete -->
+              <!-- Container for date/time like & comment count, Delete -->
               <div class="d-flex justify-content-center text-center mt-2"> 
+                <span class="text-capitalize fst-italic mx-1 fs-5 text-end ">&nbsp; <%= posts[i].createdAt.toLocaleDateString()%> @ <%= posts[i].createdAt.toLocaleTimeString()%></span>
+
                 <span class="col fa fa-heart text-end fs-5">&nbsp; <%= posts[i].likes%></span>
   
                 <span class="col fa fa-comment text-end fs-5">&nbsp; <%= posts[i].numOfComments%></span>

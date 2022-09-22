@@ -46,7 +46,6 @@ module.exports = {
         numOfComments: 0,
         user: req.user.id,
         createdBy: req.user.userName,
-      
       });
       console.log("Post has been added!");
       res.redirect("/profile");
