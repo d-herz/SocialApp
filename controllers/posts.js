@@ -78,11 +78,10 @@ module.exports = {
             caption: req.body.caption,
           }
         },
-        {
-          new: true,
-        }
+        // {
+        //   new: true, //apparently don't need this?
+        // }
       );
-
       console.log("Post Updated");
       res.redirect(`/post/${req.params.id}`);
     } catch (err) {

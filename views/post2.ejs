@@ -35,6 +35,7 @@
   
             <!-- Container for Like button/form  -->
             <div class="d-flex justify-content-between text-center mt-2">
+
               <!-- LIke Button -->
               <form class="col-2" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
                 <button class="btn btn-primary fa fa-heart" type="submit"><%= post.likes %> </button>
@@ -43,16 +44,16 @@
               <!-- & Edit & Delete Post Button (if logged in user's post) -->
                 <%if(post.user == user.id){ %>
 
-                <!-- TODO working on edit post 9-22 830pm -->
                 <!-- Edit Post Button (opens modal, below) -->
                 <div class="d-flex justify-content-center my-3">
-                  <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editPost">Edit Post</button>
+                  <button class="btn btn-primary btn-lg fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPost"></button>
                 </div>
 
                 <!-- Delete Post -->
                 <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
                   <button class="btn btn-danger fa fa-trash" type="submit"></button>
                 </form>
+                
                 <%}%>
             </div>
 
