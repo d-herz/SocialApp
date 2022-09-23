@@ -53,7 +53,7 @@
                 <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
                   <button class="btn btn-danger fa fa-trash" type="submit"></button>
                 </form>
-                
+
                 <%}%>
             </div>
 
@@ -82,7 +82,7 @@
           <div class="card-body text-dark py-1 ">
 
             <!-- Comment Div -->
-            <div class="">
+            <div class="" id="commentDiv">
               <span>Comment by:</span> <span class="text-capitalize fst-italic"> <%= comments[i].createdBy%>, <%= comments[i].createdAt.toLocaleDateString()%> @ <%= comments[i].createdAt.toLocaleTimeString()%></span>
               <h5>"<%= comments[i].comment%>"</h5>
             </div>
