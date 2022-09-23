@@ -67,7 +67,7 @@ module.exports = {
   },
 
   //TODO add abiity to "update" (edit) post title and caption
-  editCaption: async (req, res) => {
+  editPost: async (req, res) => {
     try{
       await Post.findOneAndUpdate(
         { _id: req.params.id },

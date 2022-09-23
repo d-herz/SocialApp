@@ -15,16 +15,23 @@
       <!-- Card For Post -->
       <div class="m-4">
         <div class="card bg-light ">
-          <div class="card-body text-dark py-1 text-center">
+          <div class="card-body text-dark py-1 text-center ">
 
             <!-- Post Title -->
-            <h2 class="card-title mb-1 text-center">
+            <h2 class="card-title my-1 text-center">
               <%= post.title %>
             </h2>
-            <!-- Date and Time  -->
-            <span class="text-capitalize fst-italic mx-1 fs-5  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
+
+            <!-- UserName, Date and Time  -->
+            <div class="d-flex justify-content-between text-center mt-0">
+              <span class="text-capitalize fst-italic mx-1 fs-5">User:&nbsp; <%= post.createdBy %> </span>
+              <span class="text-capitalize fst-italic mx-1 fs-5  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
+            </div>
+
             <!-- Post Image -->
-            <img class="img-fluid" src="<%= post.image%>" alt="">
+            <span class="d-flex justify-content-center">
+              <img class="img-fluid " src="<%= post.image%>" alt="">
+            </span>
   
             <!-- Container for Like button/form  -->
             <div class="d-flex justify-content-between text-center mt-2">
@@ -33,19 +40,27 @@
                 <button class="btn btn-primary fa fa-heart" type="submit"><%= post.likes %> </button>
               </form>
               
-              <!-- Delete Button (if logged in user's post) -->
-              <%if(post.user == user.id){ %>
+              <!-- & Edit & Delete Post Button (if logged in user's post) -->
+                <%if(post.user == user.id){ %>
+
+                <!-- TODO working on edit post 9-22 830pm -->
+                <!-- Edit Post Button (opens modal) -->
+                <div class="d-flex justify-content-center my-3">
+                  <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editPost">Edit Post</button>
+                </div>
+
+                <!-- Delete Post -->
                 <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
                   <button class="btn btn-danger fa fa-trash" type="submit"></button>
                 </form>
                 <%}%>
-  
-  
             </div>
+
             <!-- Div for caption -->
             <div>
               <p class="text-center h3"><%= post.caption %></p>
             </div>
+
           </div>
         </div>
       </div>
@@ -140,5 +155,58 @@
     </div>
   </div>
 </div>
+
+
+
+
+<!-- MODAL FOR POST EDIT-->
+<div class="modal fade" id="editPost" tabindex="-1" >
+  <div class="modal-dialog">
+
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+
+      <div class="modal-body">
+
+        <form action="/post/editPost<%= post.id %>?_method=PUT"  enctype="multipart/form-data" method="POST" class="" id="edit-post"> <!---enctype is for multer to work-->
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="<%= post.title %>">
+          </div>
+
+          <div class="mb-3">
+            <label for="caption" class="form-label">Caption</label>
+            <textarea class="form-control" id="caption" name="caption" placeholder="<%= post.caption %>"></textarea>
+          </div>
+
+          <!-- <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div> -->
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <button type="submit" class="btn btn-primary" value="Upload" form="create-post">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <form action="/post/editPostCaption<%= post.id %>?_method=PUT" method="POST" class="col-3"> 
+                  <button class="btn btn-primary" type="submit"><i class="fa-solid fa-pen-to-square">Edit Caption</i></button>
+                </form> -->
+
+
+
+
 
 <%- include('partials/footer') -%>

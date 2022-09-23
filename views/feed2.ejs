@@ -18,7 +18,14 @@
 
           <div class="card-body text-dark py-1 ">
             <!-- Post Title -->
-            <h2 class="card-title mb-1 text-center"><%= posts[i].title %></h2>
+            <h2 class="card-title my-1 text-center"><%= posts[i].title %></h2>
+            <!-- UserName, Date and Time  -->
+
+            <div class="d-flex justify-content-between text-center mt-0">
+              <span class="text-capitalize fst-italic mx-1 fs-5">User:&nbsp; <%= posts[i].createdBy %> </span>
+              <span class="text-capitalize fst-italic mx-1 fs-5 text-end "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
+            </div>
+
             <!-- Post Image -->
             <a href="/post/<%= posts[i]._id%>" class="d-flex justify-content-center">
               <img class="img-fluid" src="<%= posts[i].image%>">

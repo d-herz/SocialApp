@@ -39,11 +39,15 @@
       <!-- CARDS FOR POSTS -->
       <% for(var i=0; i<posts.length; i++) {%>
         <div class="m-4">
-          <div class="card bg-light ">
+          <div class="card bg-light text-center ">
 
             <div class="card-body text-dark py-1 ">
               <!-- Post Title -->
-              <h2 class="card-title mb-1 text-center"><%= posts[i].title %></h2>
+              <h2 class="card-title my-1 text-center"><%= posts[i].title %></h2>
+
+              <!-- Date and Time  -->
+              
+              <span class="text-capitalize fst-italic mx-1 fs-5 "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
 
               <!-- Post Image -->
               <a href="/post/<%= posts[i]._id%>" class="d-flex justify-content-center">
