@@ -44,7 +44,7 @@
                 <%if(post.user == user.id){ %>
 
                 <!-- TODO working on edit post 9-22 830pm -->
-                <!-- Edit Post Button (opens modal) -->
+                <!-- Edit Post Button (opens modal, below) -->
                 <div class="d-flex justify-content-center my-3">
                   <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editPost">Edit Post</button>
                 </div>
@@ -157,7 +157,7 @@
 </div>
 
 
-
+<!-- MODALITIES  -->
 
 <!-- MODAL FOR POST EDIT-->
 <div class="modal fade" id="editPost" tabindex="-1" >
@@ -172,21 +172,16 @@
 
       <div class="modal-body">
 
-        <form action="/post/editPost<%= post.id %>?_method=PUT"  enctype="multipart/form-data" method="POST" class="" id="edit-post"> <!---enctype is for multer to work-->
+        <form action="/post/editPost/<%= post.id %>?_method=PUT"   method="POST" class="" id="edit-post"> 
           <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
+            <label for="Title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="<%= post.title %>">
           </div>
 
           <div class="mb-3">
-            <label for="caption" class="form-label">Caption</label>
+            <label for="Caption" class="form-label">Caption</label>
             <textarea class="form-control" id="caption" name="caption" placeholder="<%= post.caption %>"></textarea>
           </div>
-
-          <!-- <div class="mb-3">
-            <label for="imgUpload" class="form-label">Image</label>
-            <input type="file" class="form-control" id="imageUpload" name="file">
-          </div> -->
 
         </form>
       </div>
@@ -194,19 +189,12 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-        <button type="submit" class="btn btn-primary" value="Upload" form="create-post">Submit</button>
+        <button type="submit" class="btn btn-primary" value="Upload" form="edit-post">Submit</button>
       </div>
 
     </div>
   </div>
 </div>
-
-<!-- <form action="/post/editPostCaption<%= post.id %>?_method=PUT" method="POST" class="col-3"> 
-                  <button class="btn btn-primary" type="submit"><i class="fa-solid fa-pen-to-square">Edit Caption</i></button>
-                </form> -->
-
-
-
 
 
 <%- include('partials/footer') -%>

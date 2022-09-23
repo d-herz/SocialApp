@@ -67,19 +67,29 @@ module.exports = {
   },
 
   //TODO add abiity to "update" (edit) post title and caption
+
   editPost: async (req, res) => {
     try{
       await Post.findOneAndUpdate(
         { _id: req.params.id },
-        { caption: req.body.caption },
-      )
+        { 
+          $set: {
+            title: req.body.title, 
+            caption: req.body.caption,
+          }
+        },
+        {
+          new: true,
+        }
+      );
 
-
+      console.log("Post Updated");
+      res.redirect(`/post/${req.params.id}`);
     } catch (err) {
-
-
+      console.log(err);
     }
   },
+
   deletePost: async (req, res) => {
     try {
       // Find post by id

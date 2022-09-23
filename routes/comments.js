@@ -9,6 +9,8 @@ router.post("/createComment/:id", commentsController.createComment);
 //adding comment likes
 router.put("/likeComment/:id", commentsController.likeComment);
 
+//TODO working on adding ability to editComment (not working yet)
+
 router.delete("/deleteComment/:id", commentsController.deleteComment);
 
 module.exports = router;
