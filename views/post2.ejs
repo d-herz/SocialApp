@@ -41,7 +41,7 @@
                 <button class="btn btn-primary fa fa-heart" type="submit"><%= post.likes %> </button>
               </form>
               
-              <!-- & Edit & Delete Post Button (if logged in user's post) -->
+              <!-- Edit & Delete Post Button (if logged in user's post) -->
                 <%if(post.user == user.id){ %>
 
                 <!-- Edit Post Button (opens modal, below) -->
@@ -87,13 +87,20 @@
               <h5>"<%= comments[i].comment%>"</h5>
             </div>
   
-            <!-- Likes (& deletes?) -->
+            <!-- Likes, Edits, & deletes -->
             <div class="d-flex">
               <form class="" action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT" method="POST">
                 <button class="btn btn-primary fa fa-heart" type="submit"><%= comments[i].likes %></button>
               </form>
-              <!-- delete function -->
+
+              <!-- Edit and Delete function -->
               <%if(comments[i].createdById == user.id){ %>
+                <!-- Edit Comment Button (opens modal, below) -->
+                <div class="d-flex justify-content-center my-3">
+                  <button class="btn btn-primary btn-lg fas fa-edit" data-bs-toggle="modal" data-bs-target="#editComment"></button>
+                </div>
+
+                <!-- Delete Comment -->
                 <form action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE" method="POST" > 
                   <button class="btn btn-danger fa fa-trash" type="submit"></button>
                 </form>
@@ -116,6 +123,10 @@
 </section>
 
 
+
+
+<!-- MODALITIES  -->
+
 <!-- MODAL FOR COMMENT CREATION -->
 <div class="modal fade" id="addComment" tabindex="-1" >
   <div class="modal-dialog">
@@ -134,16 +145,6 @@
             <label for="Comment" class="form-label">Comment</label>
             <input type="text" class="form-control" id="comment" name="comment">
           </div>
-
-          <!-- <div class="mb-3">
-            <label for="caption" class="form-label">Caption</label>
-            <textarea class="form-control" id="caption" name="caption"></textarea>
-          </div> -->
-
-          <!-- <div class="mb-3">
-            <label for="imgUpload" class="form-label">Image</label>
-            <input type="file" class="form-control" id="imageUpload" name="file">
-          </div> -->
         </form>
       </div>
 
@@ -156,9 +157,6 @@
     </div>
   </div>
 </div>
-
-
-<!-- MODALITIES  -->
 
 <!-- MODAL FOR POST EDIT-->
 <div class="modal fade" id="editPost" tabindex="-1" >
@@ -196,6 +194,40 @@
     </div>
   </div>
 </div>
+
+<!-- MODAL FOR Comment EDIT-->
+<div class="modal fade" id="editComment" tabindex="-1" >
+  <div class="modal-dialog">
+
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Comment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+
+      <div class="modal-body">
+
+        <form action="/comment/editComment/<%= comments._id %>?_method=PUT"   method="POST" class="" id="edit-comment"> 
+          <div class="mb-3">
+            <label for="Comment" class="form-label">Comment</label>
+            <input type="text" class="form-control" id="editCommentField" name="editedComment" placeholder="<%= comments.comment %>">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <button type="submit" class="btn btn-primary" value="Upload" form="edit-comment">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 
 
 <%- include('partials/footer') -%>

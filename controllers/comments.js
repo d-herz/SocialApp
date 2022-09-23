@@ -35,12 +35,30 @@ module.exports = {
           $inc: { likes: 1 }, 
         }
       );
+      console.log(req.params.id)
       console.log("Likes +1");
       res.redirect(`/post/${comment.post}/#commentDiv`);
     } catch (err) {
       console.log(err);
     }
   },
+
+  editComment: async (req, res) => {
+    try{
+      const comments = await Comment.findOneAndUpdate(
+        { _id: req.params.id },
+        { 
+          comment: req.body.editedComment, 
+        },
+      );
+      console.log("Comment Updated");
+      console.log(`${req.params.id} id for comment?`);
+      res.redirect(`/post/${comments.post}/#commentDiv`);
+    } catch (err) {
+      console.log(err)
+    }
+  },
+
   deleteComment: async (req, res) => {
     try {
 

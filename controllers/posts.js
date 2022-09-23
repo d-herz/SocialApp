@@ -72,11 +72,9 @@ module.exports = {
     try{
       await Post.findOneAndUpdate(
         { _id: req.params.id },
-        { 
-          $set: {
-            title: req.body.title, 
-            caption: req.body.caption,
-          }
+        { //didn't need $set apparently
+          title: req.body.title, 
+          caption: req.body.caption,
         },
         // {
         //   new: true, //apparently don't need this?

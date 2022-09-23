@@ -10,6 +10,8 @@ router.post("/createComment/:id", commentsController.createComment);
 router.put("/likeComment/:id", commentsController.likeComment);
 
 //TODO working on adding ability to editComment (not working yet)
+router.put("/editComment/:id", commentsController.editComment)
+
 
 router.delete("/deleteComment/:id", commentsController.deleteComment);
 
