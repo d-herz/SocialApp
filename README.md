@@ -41,6 +41,7 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 I've recently added:
 <ul>
 <li> 'Edit Post' functionality </li>
+<li> 'Like' and 'Comment' counts on each post in main feed</li>
 <li> Updated Feed styling and presentation </li>
 <li> Popout 'Modals' for Post and Comment Creation </li>
 <li> Local time-stamps on posts and comments </li>
