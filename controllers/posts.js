@@ -16,7 +16,7 @@ module.exports = {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
       console.log(`These are your posts ${posts}`)
-      res.render("feed2.ejs", { posts: posts });
+      res.render("feed2.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
