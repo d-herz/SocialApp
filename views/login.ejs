@@ -1,7 +1,38 @@
 <%- include('partials/header') -%>
 
+
+
+<!-- INDEX/HOME -->
+<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+  <div class="container">
+
+    <div class="d-sm-flex align-items-center justify-content-between text-light">
+
+      <div>
+        <h1 >Welcome to <span class="text-warning"> Social APP!</span></h1>
+        <p class="lead my-4">
+          A social media platform free from marketing and influencers.
+        </p>
+
+        <a href="/login" class="btn btn-primary btn-lg" >Login!</a>
+        <!-- <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#login">Login!</button> -->
+
+        <a href="/signup" class="btn btn-primary btn-lg" >Signup!</a>
+
+        <!-- <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#signUp">Signup!</button> -->
+      </div>
+
+      <img class="img-fluid w-50 d-sm-block" src="/imgs/image-share.svg" alt="">
+
+    </div>
+
+  </div>
+</section>
+
+
+
 <main class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center text-light">
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
@@ -9,6 +40,8 @@
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
+
+
       <form action="/login" method="POST">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
@@ -36,5 +69,56 @@
     </section>
   </div>
 </main>
+
+
+
+
+
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="login" tabindex="-1" >
+  <div class="modal-dialog">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <form action="/login" method="POST">
+
+          <!-- <div class="mb-3">
+            <label for="first-name" class="col-form-label">First Name:</label>
+            <input type="text" class="form-control" id="">
+          </div>
+
+          <div class="mb-3">
+            <label for="last-name" class="col-form-label">Last Name:</label>
+            <input type="text" class="form-control" id="">
+          </div> -->
+
+          <div class="mb-3">
+            <label for="inputEmail" class="col-form-label">Email Address:</label>
+            <input type="email" class="form-control" id="inputEmail" name="email">
+          </div>
+
+          <div class="mb-3">
+            <label for="inputPassword" class="col-form-label">Password:</label>
+            <input type="password" class="form-control" id="inputPassword" name="password">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <%- include('partials/footer') -%>
