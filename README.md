@@ -10,7 +10,7 @@
 
 <h3 align="left">Intro:</h3>
 <p align="left">
-Introducing: SocialApp! A social media platform free from marketing and influencers. This Full-Stack project featureas Local Authorization, unique account creation, and user password salting and hashing for security. Once a user has signed-up on the platform, they will have the ability to make image posts with a title and a caption, view other user's posts on the 'Feed', 'like' and comment on any post, and also like other user's comments. They also have the ability to edit/update their post title and caption, and delete their posts or comments. A future update will include the ability to edit/update their comments.
+Introducing: SocialApp! A social media platform free from marketing and influencers. This Full-Stack project featureas Local Authorization, unique account creation, and user password salting and hashing for security. Once a user has signed-up on the platform, they will have the ability to make image posts with a title and a caption, view other user's posts on the 'Feed', 'Like' and Comment on any post, and also 'Like' other user's comments. They also have the ability to edit/update their post title and caption, and delete their posts or comments. A future update will include the ability to edit/update their comments.
 </p>
 
 <h3 align="left">About this project:</h3>
