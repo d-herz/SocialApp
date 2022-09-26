@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerPost') -%>
 
 <section class="p-3 p-sm-4 p-lg-5">
   <div class="container-md">
@@ -16,16 +16,20 @@
       <div class="m-4">
         <div class="card bg-light border-primary border-3  ">
 
-          <div class="card-header ">
-            <!-- Post Title -->
+          <!-- Card Header -->
+          <div class="card-header d-flex justify-content-between text-center align-items-center">
+
+            <!-- Post UserName, Title, and Date/Time -->
+            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5">User:&nbsp; <%= post.createdBy %> </span>
             <h2 class="card-title my-1 text-center">
               <%= post.title %>
             </h2>
+            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
             <!-- UserName, Date and Time  -->
-            <div class="d-flex justify-content-between text-center mt-0">
+            <!-- <div class="d-flex justify-content-between text-center mt-0">
               <span class="text-capitalize fst-italic mx-1 fs-5">User:&nbsp; <%= post.createdBy %> </span>
               <span class="text-capitalize fst-italic mx-1 fs-5  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
-            </div>
+            </div> -->
 
           </div>
 
