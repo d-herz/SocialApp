@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerFeed') -%>
 
 <section class="p-3 p-sm-4 p-lg-5">
   <div class="container-md">
@@ -12,23 +12,25 @@
     <div class="col g-4 align-items-center">
       <h2 class="text-center mt-3 mb-0 text-light">Welcome to your feed, <span class="text-capitalize"><%= user.userName %></span>!</h2>
 
-
-      <% for(var i=0; i<posts.length; i++) {%>
-      <!-- Card For Posts -->  
+      <!-- Card For Posts --> 
+      <% for(var i=0; i<posts.length; i++) {%> 
       <div class="m-4 ">
         <div class="card bg-light border-primary border-3">
           
           <!-- Card Header -->
-          <div class="card-header">
-            <!-- Post Title -->
+          <div class="card-header d-flex justify-content-between text-center align-items-center ">
+            <!-- Post UserName, Title, and Date/Time -->
+            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5">User:&nbsp; <%= posts[i].createdBy %> </span>
             <h2 class="card-title my-1 text-center">
               <%= posts[i].title %>
             </h2>
+            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5 text-end "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
+
             <!-- UserName, Date and Time  -->
-            <div class="d-flex justify-content-between text-center mt-0">
+            <!-- <div class="d-flex justify-content-between text-center mt-0">
               <span class="text-capitalize fst-italic mx-1 fs-5">User:&nbsp; <%= posts[i].createdBy %> </span>
               <span class="text-capitalize fst-italic mx-1 fs-5 text-end "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
-            </div>
+            </div> -->
           </div>
 
           <div class="card-body text-dark py-1 ">
