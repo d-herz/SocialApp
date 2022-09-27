@@ -5,8 +5,8 @@
 
     <!-- Return to feed & Profile buttons -->
     <div class="row justify-content-center mt-5 p-3">
-      <a class="btn btn-primary w-25  m-2 " href="/profile">Return to Profile</a>
-      <a class="btn btn-primary w-25  m-2" href="/feed">Return to Feed</a>
+      <a class="btn btn-primary w-50  m-2 " href="/profile">Return to Profile</a>
+      <a class="btn btn-primary w-50  m-2" href="/feed">Return to Feed</a>
     </div> 
 
     <!-- Post Container  -->
@@ -17,14 +17,15 @@
         <div class="card bg-light border-primary border-3  ">
 
           <!-- Card Header -->
-          <div class="card-header d-sm-flex justify-content-between text-center align-items-center">
+          <div class="card-header  justify-content-between text-center align-items-center">
 
             <!-- Post UserName, Title, and Date/Time -->
-            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5">User:&nbsp; <%= post.createdBy %> </span>
+            
             <h2 class="card-title my-1 text-center">
               <%= post.title %>
             </h2>
-            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
+            <h6 class="text-capitalize fst-italic mx-1 mt-1 mb-0 fs-6">User:&nbsp; <%= post.createdBy %> </h6>
+            <span class="text-capitalize fst-italic mx-1 mt-3 fs-6  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
             <!-- UserName, Date and Time  -->
             <!-- <div class="d-flex justify-content-between text-center mt-0">
               <span class="text-capitalize fst-italic mx-1 fs-5">User:&nbsp; <%= post.createdBy %> </span>
@@ -107,16 +108,17 @@
             </div>
   
             <!-- Likes, Edits, & deletes -->
-            <div class="d-flex">
+            <div class="d-flex align-items-center my-1">
+              <!-- Form for liking comment -->
               <form class="" action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT" method="POST">
-                <button class="btn btn-primary fa fa-heart" type="submit"><%= comments[i].likes %></button>
+                <button class="btn btn-primary fa fa-heart ms-2" type="submit"><%= comments[i].likes %></button>
               </form>
 
               <!-- Edit and Delete function -->
               <%if(comments[i].createdById == user.id){ %>
                 <!-- Edit Comment Button (opens modal, below) -->
-                <div class="d-flex justify-content-center my-3">
-                  <button class="btn btn-primary btn-lg fas fa-edit" data-bs-toggle="modal" data-bs-target="#editComment"></button>
+                <div class="d-flex justify-content-center ">
+                  <button class="btn btn-primary fas fa-edit mx-2" data-bs-toggle="modal" data-bs-target="#editComment"></button>
                 </div>
 
                 <!-- Delete Comment -->

@@ -1,16 +1,16 @@
 <%- include('partials/headerFeed') -%>
 
-<section class="p-3 p-sm-4 p-lg-5">
-  <div class="container-md">
+<section class="p-3 p-sm-5 p-lg-5">
+  <div class="container-md mt-5">
 
     <!-- Return To Profile button -->
-    <!-- <div class="row justify-content-center">
-      <a class="btn btn-primary w-25" href="/profile">Return to Profile</a>
-    </div> -->
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary w-50 w-sm-25 mt-4" href="/profile">Return to Profile</a>
+    </div>
 
     <!-- Feed Container -->
     <div class="col g-4 align-items-center">
-      <h2 class="text-center mt-5 mb-0 text-light" id="topH2">Welcome to your feed, <span class="text-capitalize"><%= user.userName %></span>!</h2>
+      <h2 class="text-center mt-4 mb-0 text-light" id="topH2">Welcome to your feed, <span class="text-capitalize"><%= user.userName %></span>!</h2>
 
       <!-- Card For Posts --> 
       <% for(var i=0; i<posts.length; i++) {%> 
@@ -18,14 +18,15 @@
         <div class="card bg-light border-primary border-3">
           
           <!-- Card Header -->
-          <div class="card-header d-flex justify-content-between text-center align-items-center ">
+          <div class="card-header  justify-content-between text-center align-items-center ">
             
             <!-- Post UserName, Title, and Date/Time -->
-            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5">User:&nbsp; <%= posts[i].createdBy %> </span>
-            <h2 class="card-title my-1 text-center">
+            
+            <h2 class="card-title mt-1 mb-0 text-center">
               <%= posts[i].title %>
             </h2>
-            <span class="text-capitalize fst-italic mx-1 mt-3 fs-5 text-end "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
+            <h6 class="text-capitalize fst-italic mx-1 mt-1 mb-0 fs-6">User:&nbsp; <%= posts[i].createdBy %> </h6>
+            <span class="text-capitalize fst-italic mx-1 mt-3 fs-6 text-end "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
 
             <!-- UserName, Date and Time  -->
             <!-- <div class="d-flex justify-content-between text-center mt-0">
@@ -45,15 +46,16 @@
           </div>
           <!-- Card Footer -->
           <div class="card-footer">
-            <!-- Container for Username, like & comment count, and post time -->
+
+            <!-- Container for like & comment count -->
             <div class="d-flex justify-content-center text-center mt-2"> 
-              <span class="text-capitalize fst-italic mx-1 fs-5">User:&nbsp; <%= posts[i].createdBy %></span>
+              
   
               <span class="col fa fa-heart  fs-5">&nbsp; <%= posts[i].likes%></span>
   
               <span class="col fa fa-comment fs-5">&nbsp; <%= posts[i].numOfComments%></span>
 
-              <span class="text-capitalize fst-italic mx-1 fs-5 text-end ">&nbsp; <%= posts[i].createdAt.toLocaleDateString()%> @ <%= posts[i].createdAt.toLocaleTimeString()%></span>
+              
 
             </div>
             
@@ -67,11 +69,11 @@
 
     <!-- Return To Top and Profile Buttons -->
     <div class="row justify-content-center mt-5">
-      <a class="btn btn-primary w-25" href="#topH2">Back to Top</a>
+      <a class="btn btn-primary w-50" href="#topH2">Back to Top</a>
     </div>
 
     <div class="row justify-content-center mt-3 mb-5">
-      <a class="btn btn-primary w-25" href="/profile">Return to Profile</a>
+      <a class="btn btn-primary w-50" href="/profile">Return to Profile</a>
     </div>
 
 
