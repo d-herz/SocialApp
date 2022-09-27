@@ -1,9 +1,9 @@
 
 
 
-
-
-<h1 align="center"> SocialApp! </h1>
+<p align="center">
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/home.png" alt="" />
+</p> 
 
 <h3 align="center">An in Development Full-Stack Social Network Platform</h3>
 <!-- <h3 align="center"> <a href="https://quotes-of-breakingbad.netlify.app/">Visit the live site</a></h3> -->
@@ -13,7 +13,7 @@
 Introducing: SocialApp! A social media platform free from marketing and influencers. This Full-Stack project featureas Local Authorization, unique account creation, and user password salting and hashing for security. Once a user has signed-up on the platform, they will have the ability to make image posts with a title and a caption, view other user's posts on the 'Feed', 'Like' and Comment on any post, and also 'Like' other user's comments. They also have the ability to edit/update their post title and caption, and delete their posts or comments. A future update will include the ability to edit/update their comments.
 </p>
 
-<h3 align="left">About this project:</h3>
+
 <p align="left">
 </p>
 
@@ -31,10 +31,15 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 </p>
 
 <!-- Add Gif Below -->
-<!-- 
+
+
+<h3 align="left">Screen Grabs of the App:</h3>
+
 <p align="center">
-  <img src="https://github.com/d-herz/breaking-bad-quotes-client/blob/main/bb-readme.gif" alt="animated" />
-</p> -->
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile.png" alt="" width= "400" height="auto" />
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post.png" alt="" width= "400" height="auto" />
+   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/feed.png" alt="" width= "400" height="auto" />
+</p> 
 
 
 <h3 align="left">Recent Updates:</h3>
@@ -42,12 +47,14 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 I've recently added:
 <ul>
 <li> 'Edit Post' functionality </li>
+<li> Ability to Comment on posts </li>
+<li> Ability to 'Like' and Delete comments</li> 
 <li> 'Like' and 'Comment' counts on each post in main feed</li>
+<li> Username displayed on Posts and Comments </li>
 <li> Updated Feed styling and presentation </li>
 <li> Popout 'Modals' for Post and Comment Creation </li>
 <li> Local time-stamps on posts and comments </li>
-<li> Ability to 'Like' and Delete comments</li> 
-<li> Ability to comment on posts </li>
+
 <!----- <li> </li> ---->
 </ul>
 </p>
