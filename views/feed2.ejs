@@ -4,13 +4,13 @@
   <div class="container-md">
 
     <!-- Return To Profile button -->
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center">
       <a class="btn btn-primary w-25" href="/profile">Return to Profile</a>
-    </div>
+    </div> -->
 
     <!-- Feed Container -->
     <div class="col g-4 align-items-center">
-      <h2 class="text-center mt-3 mb-0 text-light">Welcome to your feed, <span class="text-capitalize"><%= user.userName %></span>!</h2>
+      <h2 class="text-center mt-5 mb-0 text-light" id="topH2">Welcome to your feed, <span class="text-capitalize"><%= user.userName %></span>!</h2>
 
       <!-- Card For Posts --> 
       <% for(var i=0; i<posts.length; i++) {%> 
@@ -64,7 +64,13 @@
       <% } %>
 
     </div>
-    <div class="row justify-content-center mt-5 mb-5">
+
+    <!-- Return To Top and Profile Buttons -->
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary w-25" href="#topH2">Back to Top</a>
+    </div>
+
+    <div class="row justify-content-center mt-3 mb-5">
       <a class="btn btn-primary w-25" href="/profile">Return to Profile</a>
     </div>
 

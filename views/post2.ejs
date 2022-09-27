@@ -1,23 +1,23 @@
 <%- include('partials/headerPost') -%>
 
-<section class="p-3 p-sm-4 p-lg-5">
-  <div class="container-md">
+<section class="p-3 p-sm-5 p-lg-5">
+  <div class="container-md mt-5">
 
     <!-- Return to feed & Profile buttons -->
-    <div class="row justify-content-center mt-5">
-      <a class="btn btn-primary w-25 mx-2" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary w-25 mx-2" href="/feed">Return to Feed</a>
+    <div class="row justify-content-center mt-5 p-3">
+      <a class="btn btn-primary w-25  m-2 " href="/profile">Return to Profile</a>
+      <a class="btn btn-primary w-25  m-2" href="/feed">Return to Feed</a>
     </div> 
 
     <!-- Post Container  -->
-    <div class="col g-4 align-items-center mt-5">
+    <div class="col g-4 align-items-center mt-2 mt-sm-5">
 
       <!-- Card For Post -->
       <div class="m-4">
         <div class="card bg-light border-primary border-3  ">
 
           <!-- Card Header -->
-          <div class="card-header d-flex justify-content-between text-center align-items-center">
+          <div class="card-header d-sm-flex justify-content-between text-center align-items-center">
 
             <!-- Post UserName, Title, and Date/Time -->
             <span class="text-capitalize fst-italic mx-1 mt-3 fs-5">User:&nbsp; <%= post.createdBy %> </span>
@@ -43,6 +43,7 @@
           </div>
           <!-- Card Footer -->
           <div class="card-footer">
+
             <!-- Container for Like button/form  -->
             <div class="d-flex justify-content-between text-center mt-2">
   
@@ -55,22 +56,30 @@
                 <%if(post.user == user.id){ %>
   
                 <!-- Edit Post Button (opens modal, below) -->
-                <div class="d-flex justify-content-center my-3">
-                  <button class="btn btn-primary btn-lg fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPost"></button>
+                <div class="d-flex justify-content-end me-5 ">
+                  <button class="btn btn-primary fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPost"></button>
+
+                  <!-- Delete Post -->
+                  <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
+                    <button class="btn btn-danger fa fa-trash mx-3" type="submit"></button>
+                  </form>
+
+
                 </div>
   
-                <!-- Delete Post -->
+                <!-- Delete Post
                 <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
                   <button class="btn btn-danger fa fa-trash" type="submit"></button>
-                </form>
+                </form> -->
   
                 <%}%>
             </div>
             
             <!-- Div for caption -->
-            <div>
-              <p class="text-center h3"><%= post.caption %></p>
+            <div class="my-2">
+              <p class="text-center h4"><%= post.caption %></p>
             </div>
+
           </div>
         </div>
       </div>
