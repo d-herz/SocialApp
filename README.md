@@ -5,7 +5,7 @@
 
 <h1 align="center"> SocialApp! </h1>
 
-<h3 align="center">A Full Stack Social Network Platform</h3>
+<h3 align="center">An in Development Full-Stack Social Network Platform</h3>
 <!-- <h3 align="center"> <a href="https://quotes-of-breakingbad.netlify.app/">Visit the live site</a></h3> -->
 
 <h3 align="left">Intro:</h3>
@@ -20,6 +20,7 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 <h3 align="left">Quick facts about this project:</h3>
 <p align="left">
 <ul>
+<li> Currently still in development </li>
 <li> Server Side Rendering via EJS using BootStrap </li>
 <li> Server logic written in MVC structure using Node.js and Express</li>
 <li> Authorization provided via Passport.js </li> 
@@ -59,7 +60,8 @@ I've recently added:
 <h4> Connect with me:</h4>
 <p align="left">
 <a href="https://twitter.com/danherz636" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="danherz636" height="30" width="40" /></a>
-<a href="https://www.linkedin.com/in/daniel-hyres/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/daniel-hyres/" height="30" width="40" /></a><a href="https://www.twitch.tv/herz636/videos" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="danherz636" height="30" width="40" />
+<a href="https://www.twitch.tv/herz636/videos" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="danherz636" height="30" width="40" />
+<a href="https://www.linkedin.com/in/daniel-hyres/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/daniel-hyres/" height="30" width="40" /></a>
 </p>
 
 
