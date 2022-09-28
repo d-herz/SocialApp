@@ -6,14 +6,19 @@
 /* HTML */
 html {
   font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-color: rgb(43, 48, 53);
-  /* color: white; */
+  background-color: rgb(33, 37, 41);
+ 
+}
+
+h1,h2{
+  font-family: cursive;
 }
 
 
-/* button{
-  max-width: 30%;
-} */
+.nav-item{
+  color: yellow;
+}
