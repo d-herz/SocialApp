@@ -63,7 +63,7 @@
               <!-- Card Header -->
               <div class="card-header  justify-content-between text-center align-items-center">
                 <!-- Post Title -->
-                <h2 class="card-title mt-1 mb-0 text-center"><%= posts[i].title %></h2>
+                <h2 class="card-title mt-1 mb-0 text-center" id="post-title"><%= posts[i].title %></h2>
                 <!-- Date and Time  -->
                 <span class="text-capitalize fst-italic mx-1 mt-3 fs-6 "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
               </div>
@@ -103,11 +103,11 @@
 </section>
 
 <!-- Bottom Section for Buttons -->
-<section class=" pt-5 p-3 pt-sm-4 p-lg-5">
-  <div class="container-md pt-4 ">
+<section class="  p-3  p-lg-5">
+  <div class="container-md  ">
 
     <!-- Return To Top and Feed Buttons -->
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-1">
       <a class="btn btn-primary w-25" href="#topH2">Back to Top</a>
     </div>
 

@@ -19,6 +19,23 @@ h1,h2{
 }
 
 
+
+/*NAV*/
+
+#siteName{
+  font-family: cursive;
+}
+
 .nav-item{
   color: yellow;
+}
+
+
+
+
+
+/*POSTS*/
+
+#post-title{
+  font-weight: bold;
 }
