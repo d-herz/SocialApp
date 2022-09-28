@@ -35,11 +35,21 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 
 <h3 align="left">Screen Grabs of the App:</h3>
 
+<h4 align="center" > Profile: </h4>
 <p align="center">
-  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile.png" alt="" width= "400" height="auto" />
-  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post.png" alt="" width= "400" height="auto" />
-   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/feed.png" alt="" width= "400" height="auto" />
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile.png" alt="" width= "400" height="auto"   />
 </p> 
+
+<h4 align="center" > Post: </h4>
+<p align="center">
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post.png" alt="" width= "400" height="auto" />
+</p> 
+
+<h4 align="center" > Feed: </h4>
+<p align="center">
+   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/feed.png" alt="" width= "400" height="auto" 
+</p> 
+
 
 
 <h3 align="left">Recent Updates:</h3>
