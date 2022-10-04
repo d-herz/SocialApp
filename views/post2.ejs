@@ -1,6 +1,6 @@
 <%- include('partials/headerPost') -%>
 
-<section class="p-3 p-sm-5 p-lg-5">
+<section class="p-3 p-sm-5 p-lg-5 bg-black">
   <div class="container-md mt-5">
 
     <!-- Return to feed & Profile buttons -->
@@ -14,7 +14,7 @@
 
       <!-- Card For Post -->
       <div class="m-4">
-        <div class="card bg-light border-primary border-3  ">
+        <div class="card bg-dark text-light border-warning rounded-4 border-3  ">
 
           <!-- Card Header -->
           <div class="card-header  justify-content-between text-center align-items-center">
@@ -109,9 +109,9 @@
       <!-- Card For  Comments -->
       <% for(var i=0; i<comments.length; i++) {%>
       <div class="m-4 ">
-        <div class="card bg-light ">
+        <div class="card bg-dark border-warning rounded-4 ">
 
-          <div class="card-body text-dark py-1 ">
+          <div class="card-body text-light py-1  ">
 
             <!-- Comment Div -->
             <div class="" id="commentDiv">

@@ -1,7 +1,7 @@
 <%- include('partials/headerProfile') -%>
 
 <!-- Top Section With user Info -->
-<section class=" pt-5 pb-0 p-3 pt-sm-4 ">
+<section class=" pt-5 pb-0 p-3 pt-sm-4 bg-black ">
   <div class="container-md pt-4 ">
 
     <!-- DIV FOR PROFILE TOP -->
@@ -14,9 +14,9 @@
 
       <!-- User Info and Logout -->
       <div class="row justify-content-center mt-2 mt-sm-4 text-center text-light" id="topDiv">
-        <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to your Profile!</h2>
-        <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p>
-        <p><strong>Email</strong>: <%= user.email %></p>
+        <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to your Profile, <strong class="text-capitalize"><%= user.userName %>!</strong></h2>
+        <!-- <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p> -->
+        <p class="mt-1"><strong>Email</strong>: <%= user.email %></p>
           <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
       </div>
 
@@ -30,7 +30,7 @@
 </section>
 
 <!-- Section for Post data -->
-<section class=" p-2  p-lg-1">
+<section class=" p-2 p-lg-1 bg-black">
   <div class="container-md  ">
     
     <!-- "Your Posts" Container -->
@@ -48,17 +48,18 @@
 </section>
 
 <!-- Section for Posts and Cards -->
-<section class=" p-2 ">
+<section class=" p-3 p-sm-5 p-lg-5 bg-black ">
   <div class="container-md ">
     <div class="row text-center g-4">
 
       <div class="col mt-1">
+        
         <!-- CARDS FOR POSTS -->
         <% for(var i=0; i<posts.length; i++) {%>
           
           <div class="m-4 card-group ">
             
-            <div class="card bg-light text-center border-primary border-3">
+            <div class="card bg-dark text-light text-center border-warning rounded-4 border-3">
     
               <!-- Card Header -->
               <div class="card-header  justify-content-between text-center align-items-center">
