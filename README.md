@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/home.png" alt="" />
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/home2.png" alt="" />
 </p> 
 
 <h3 align="center">An in Development Full-Stack Social Network Platform</h3>
@@ -35,19 +35,23 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 
 <h3 align="left">Screen Grabs of the App:</h3>
 
-<h4 align="center" > Profile: </h4>
+<h4 align="left" > Profile & Creat Post Modal: </h4>
 <p align="center">
-  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile.png" alt="" width= "400" height="auto"   />
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile1.png" alt="" width= "375" height="auto"   />
+  <span> <span>
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/createPost.png" alt="" width= "375" height="auto"   />
 </p> 
 
-<h4 align="center" > Post: </h4>
+<h4 align="left" > Post & Add Comment Modal: </h4>
 <p align="center">
-  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post.png" alt="" width= "400" height="auto" />
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post1.png" alt="" width= "375" height="auto" />
+  <span> <span>
+  <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/addComment.png" alt="" width= "375" height="auto" />
 </p> 
 
 <h4 align="center" > Feed: </h4>
 <p align="center">
-   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/feed.png" alt="" width= "400" height="auto" 
+   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/feed2.png" alt="" width= "375" height="auto" 
 </p> 
 
 
