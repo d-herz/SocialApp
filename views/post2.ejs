@@ -175,7 +175,7 @@
 
         <form action="/comment/createComment/<%=post._id%>" method="POST" class="" id="create-comment"> 
           <div class="mb-3">
-            <label for="Comment" class="form-label">Comment</label>
+            <label for="comment" class="form-label">Comment</label>
             <input type="text" class="form-control" id="comment" name="comment">
           </div>
         </form>
@@ -206,12 +206,12 @@
 
         <form action="/post/editPost/<%= post.id %>?_method=PUT"   method="POST" class="" id="edit-post"> 
           <div class="mb-3">
-            <label for="Title" class="form-label">Title</label>
+            <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="<%= post.title %>">
           </div>
 
           <div class="mb-3">
-            <label for="Caption" class="form-label">Caption</label>
+            <label for="caption" class="form-label">Caption</label>
             <textarea class="form-control" id="caption" name="caption" placeholder="<%= post.caption %>"></textarea>
           </div>
 
@@ -234,16 +234,17 @@
 
     <div class="modal-content"> 
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Comment</h5>
+        <h5 class="modal-title" id="">Edit Comment</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       
 
       <div class="modal-body">
 
-        <form action="/comment/editComment/<%= comments._id %>?_method=PUT"   method="POST" class="" id="edit-comment"> 
+        <form action="/comment/editComment/<%=comments._id %>?_method=PUT"  method="POST" id="edit-comment"> 
           <div class="mb-3">
-            <label for="Comment" class="form-label">Comment</label>
+            <label for="editCommentField" class="form-label">Comment</label>
+
             <input type="text" class="form-control" id="editCommentField" name="editedComment" placeholder="<%= comments.comment %>">
           </div>
 

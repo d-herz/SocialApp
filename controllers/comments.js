@@ -45,6 +45,7 @@ module.exports = {
 
   editComment: async (req, res) => {
     try{
+      console.log(req.params.id)
       const comments = await Comment.findOneAndUpdate(
         { _id: req.params.id },
         { 
