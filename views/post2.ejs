@@ -5,8 +5,8 @@
 
     <!-- Return to feed & Profile buttons -->
     <div class="row justify-content-center mt-5 p-3">
-      <a class="btn btn-primary w-50  m-2 " href="/profile">Return to Profile</a>
-      <a class="btn btn-primary w-50  m-2" href="/feed">Return to Feed</a>
+      <a class="btn btn-warning w-50  m-2 " href="/profile">Return to Profile</a>
+      <a class="btn btn-warning w-50  m-2" href="/feed">Return to Feed</a>
     </div> 
 
     <!-- Post Container  -->
@@ -50,7 +50,7 @@
   
               <!-- LIke Button -->
               <form class="col-2" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-                <button class="btn btn-primary fa fa-heart" type="submit"><%= post.likes %> </button>
+                <button class="btn btn-warning fa fa-heart" type="submit"><%= post.likes %> </button>
               </form>
               
               <!-- Edit & Delete Post Button (if logged in user's post) -->
@@ -58,7 +58,7 @@
   
                 <!-- Edit Post Button (opens modal, below) -->
                 <div class="d-flex justify-content-end me-5 ">
-                  <button class="btn btn-primary fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPost"></button>
+                  <button class="btn btn-warning fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPost"></button>
 
                   <!-- Delete Post -->
                   <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
@@ -91,7 +91,7 @@
         <h2 class="card-title mb-1 text-center text-light">
           Comments:
         </h2>
-        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#addComment">Add Comment</button>
+        <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#addComment">Add Comment</button>
       </div>
 
       <!-- Conditional for counting comments -->
@@ -123,14 +123,14 @@
             <div class="d-flex align-items-center my-1">
               <!-- Form for liking comment -->
               <form class="" action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT" method="POST">
-                <button class="btn btn-primary fa fa-heart ms-2" type="submit"><%= comments[i].likes %></button>
+                <button class="btn btn-warning fa fa-heart ms-2" type="submit"><%= comments[i].likes %></button>
               </form>
 
               <!-- Edit and Delete function -->
               <%if(comments[i].createdById == user.id){ %>
                 <!-- Edit Comment Button (opens modal, below) -->
                 <div class="d-flex justify-content-center ">
-                  <button class="btn btn-primary fas fa-edit mx-2" data-bs-toggle="modal" data-bs-target="#editComment"></button>
+                  <button class="btn btn-warning fas fa-edit mx-2" data-bs-toggle="modal" data-bs-target="#editComment"></button>
                 </div>
 
                 <!-- Delete Comment -->
@@ -245,7 +245,7 @@
           <div class="mb-3">
             <label for="editCommentField" class="form-label">Comment</label>
 
-            <input type="text" class="form-control" id="editCommentField" name="editedComment" placeholder="<%= comments.comment %>">
+            <input type="text" class="form-control" id="editCommentField" name="editedComment" placeholder="<%= comments._id %>">
           </div>
 
         </form>
