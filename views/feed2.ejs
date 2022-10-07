@@ -5,7 +5,11 @@
 
     <!-- Return To Profile button -->
     <div class="row justify-content-center mt-5">
-      <a class="btn btn-warning w-25 mt-4" href="/profile">Return to Profile</a>
+      <!-- <a class="btn btn-warning w-25 mt-4" href="/profile">Return to Profile</a> -->
+
+      <button class="btn btn-warning w-25 mt-4"><a class="text-decoration-none text-black" href="/profile/<%= user.id %>">Return to Profile</a></button>
+
+
     </div>
 
     <!-- Feed Container -->

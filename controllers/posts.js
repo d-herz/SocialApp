@@ -1,10 +1,13 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const User = require("../models/User");
 
 module.exports = {
   getProfile: async (req, res) => {
     try {
+      // const user = await User.findById(req.params.id) //not used yet, but for adding individual profiles later?
+
       const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" });
       
       res.render("profile2.ejs", { posts: posts, user: req.user });
@@ -65,8 +68,6 @@ module.exports = {
       console.log(err);
     }
   },
-
-  //TODO add abiity to "update" (edit) post title and caption
 
   editPost: async (req, res) => {
     try{

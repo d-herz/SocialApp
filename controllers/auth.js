@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect(`/profile/${req.user.id}`);
   }
   res.render("login", {
     title: "Login",
