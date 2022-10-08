@@ -45,16 +45,20 @@ module.exports = {
 
   editComment: async (req, res) => {
     try{
-      console.log(req.params.id)
-      const comments = await Comment.findOneAndUpdate(
-        { _id: req.params.id },
+      console.log(`this is supposed to be the comment id: ${req.params.commentId}`)
+      
+      const comments = await Comment.find({post: req.params.commentId, id: req.params.commentId})
+     
+      const commentToEdit = await Comment.findOneAndUpdate(
+        { _id: req.params.commentId },
         { 
           comment: req.body.editedComment, 
         },
       );
       console.log("Comment Updated");
-      console.log(`${req.params.id} id for comment?`);
-      res.redirect(`/post/${comments.post}/#commentDiv`);
+      console.log(`${req.params.commentId} id for comment?`);
+
+      res.redirect(`/post/${commentToEdit.post}/#commentDiv`);
     } catch (err) {
       console.log(err)
     }
