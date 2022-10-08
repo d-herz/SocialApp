@@ -16,7 +16,7 @@
       <div class="row justify-content-center mt-2 mt-sm-4 text-center text-light" id="topDiv">
         <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to <strong class="text-capitalize"><%= otherUser.userName %>'s</strong> Profile! </h2>
         <!-- <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p> -->
-        <p class="mt-1"><strong>Email</strong>: <%= user.email %></p>
+        <p class="mt-1"><strong>Email</strong>: <%= otherUser.email %></p>
           <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
       </div>
 
@@ -24,7 +24,7 @@
       <div class="d-flex justify-content-center mt-3 mb-0">
         <!-- <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#createPost">Return to your Profile</button> -->
         
-        <button class="btn btn-warning btn-lg ms-2"><a class="text-decoration-none text-black" href="/profile/<%= user._id %> ">Return to Your Profile</a></button>
+        <button class="btn btn-warning btn-lg "><a class="text-decoration-none text-black" href="/profile/<%= user._id %> ">Your Profile</a></button>
 
         <button class="btn btn-warning btn-lg ms-2"><a class="text-decoration-none text-black" href="/feed">Visit Feed</a></button>
       </div>                  
@@ -39,11 +39,11 @@
     
     <!-- "Your Posts" Container -->
     <div class=" g-4 align-items-center mt-4">
-      <h3 class="text-center mt-1 mb-0 text-light">My Posts</h3>
+      <!-- <h3 class="text-center mt-1 mb-0 text-light"><span class="text-capitalize"> <%= otherUser.userName %>'s' </span> Posts</h3> -->
       
       <!-- Conditional for counting posts -->
       <%if(posts.length > 0 ){ %>   
-        <h4 class="text-center fst-italic mt-2 mb-0 text-light ">You have <%= posts.length %> Posts </h4>
+        <h4 class="text-center fst-italic mt-2 mb-0 text-light "> <span class="text-capitalize"> <%= otherUser.userName %> </span> has <%= posts.length %> Posts </h4>
         <%} else { %> 
         <h4 class="text-center fst-italic mt-2 mb-0 text-light">You have <%= posts.length %> Posts, share something! </h4>  
       <% } %>
@@ -90,9 +90,9 @@
     
                   <span class="col fa fa-comment  fs-5">&nbsp; <%= posts[i].numOfComments%></span>
     
-                  <form action="/post/deletePost/<%= posts[i].id %>?_method=DELETE" method="POST" class="d-inline "> 
+                  <!-- <form action="/post/deletePost/<%= posts[i].id %>?_method=DELETE" method="POST" class="d-inline "> 
                     <button class="btn btn-warning fa fa-trash" type="submit"></button>
-                  </form>
+                  </form> -->
                 </div> 
               </div>
     
@@ -128,10 +128,8 @@
 
 
 
-
-
 <!-- MODAL FOR POST CREATION -->
-<div class="modal fade" id="createPost" tabindex="-1" >
+<!-- <div class="modal fade" id="createPost" tabindex="-1" >
     <div class="modal-dialog">
 
       <div class="modal-content"> 
@@ -169,7 +167,7 @@
 
       </div>
     </div>
-</div>
+</div> -->
 
 
 

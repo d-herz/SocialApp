@@ -6,8 +6,6 @@ const User = require("../models/User");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      // const user = await User.findById(req.params.id) //not used yet, but for adding individual profiles later?
-
       const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" });
       
       res.render("profile2.ejs", { posts: posts, user: req.user });
@@ -19,7 +17,7 @@ module.exports = {
   //TODO add ability to "get" someone elses profile
   getOtherProfile: async (req, res) => {
     try {
-      const otherUser = await User.findById(req.params.id) //not used yet, but for adding individual profiles later?
+      const otherUser = await User.findById(req.params.id) 
 
       const posts = await Post.find({ user: req.params.id }).sort({ createdAt: "desc" });
       
