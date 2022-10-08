@@ -5,7 +5,7 @@ const postsController = require("../controllers/posts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth"); //This is so the 'ensureAuth' method can be called the the get('/:id') route
 
 
-//Post Routes - simplified for now
+//Post Routes
 router.get("/:id", ensureAuth, postsController.getPost); //remember colon syntax grabs everything after the slash, and we store it in a variable called 'id', which is referenced in the posts controller (and also "ensureAuth" is middleware that makes sure you are logged in)
 
 
@@ -19,8 +19,5 @@ router.put("/editPost/:id", postsController.editPost)
 
 
 router.delete("/deletePost/:id", postsController.deletePost);
-
-
-
 
 module.exports = router;

@@ -8,6 +8,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Main Routes - simplified for now
 router.get("/", homeController.getIndex);
 router.get("/profile/:id", ensureAuth, postsController.getProfile);
+
+//TODO: Route for other User's profile
+
+router.get("/userProfile/:id", postsController.getOtherProfile)
+
 router.get("/feed", ensureAuth, postsController.getFeed);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
