@@ -17,7 +17,7 @@
         <div class="card bg-dark text-light border-warning rounded-4 border-3  ">
 
           <!-- Card Header -->
-          <div class="card-header  justify-content-between text-center align-items-center">
+          <div class="card-header justify-content-between text-center align-items-center">
 
             <!-- Post UserName, Title, and Date/Time -->
             
@@ -37,9 +37,23 @@
           <div class="card-body text-dark py-1 text-center ">
 
             <!-- Post Image -->
-            <span class="d-flex justify-content-center">
+            <!-- <span class="d-flex justify-content-center">
               <img class="img-fluid " src="<%= post.image%>" alt="">
-            </span>
+            </span> -->
+
+            <%if(post.user == user.id){ %>
+              <!-- your profile if it's your post -->
+              <a href="/profile/<%= post.user %>" class="d-flex justify-content-center">
+                <img class="img-fluid" src="<%= post.image%>">
+              </a>
+
+              <%} else { %> 
+              <!-- else otherUser profile -->
+              <a href="/userProfile/<%= post.user %>" class="d-flex justify-content-center">
+                <img class="img-fluid" src="<%= post.image%>">
+              </a>
+              <% } %>
+
   
           </div>
           <!-- Card Footer -->

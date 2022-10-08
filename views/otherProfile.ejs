@@ -14,7 +14,7 @@
 
       <!-- User Info and Logout -->
       <div class="row justify-content-center mt-2 mt-sm-4 text-center text-light" id="topDiv">
-        <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to your Profile, <strong class="text-capitalize"><%= user.userName %>!</strong></h2>
+        <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to <strong class="text-capitalize"><%= otherUser.userName %>'s</strong> Profile! </h2>
         <!-- <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p> -->
         <p class="mt-1"><strong>Email</strong>: <%= user.email %></p>
           <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
@@ -22,8 +22,10 @@
 
       <!-- Create Post Button (opens modal) -->
       <div class="d-flex justify-content-center mt-3 mb-0">
-        <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#createPost">Create Post</button>
+        <!-- <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#createPost">Return to your Profile</button> -->
         
+        <button class="btn btn-warning btn-lg ms-2"><a class="text-decoration-none text-black" href="/profile/<%= user._id %> ">Return to Your Profile</a></button>
+
         <button class="btn btn-warning btn-lg ms-2"><a class="text-decoration-none text-black" href="/feed">Visit Feed</a></button>
       </div>                  
     </div>

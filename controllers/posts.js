@@ -17,17 +17,17 @@ module.exports = {
   },
 
   //TODO add ability to "get" someone elses profile
-  //TODO: below is an unedited copy of above
   getOtherProfile: async (req, res) => {
-    // try {
-    //   // const user = await User.findById(req.params.id) //not used yet, but for adding individual profiles later?
+    try {
+      const otherUser = await User.findById(req.params.id) //not used yet, but for adding individual profiles later?
 
-    //   const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" });
+      const posts = await Post.find({ user: req.params.id }).sort({ createdAt: "desc" });
       
-    //   res.render("otherProfile.ejs", { posts: posts, user: req.user });
-    // } catch (err) {
-    //   console.log(err);
-    // }
+      res.render("otherProfile.ejs", { posts: posts, user: req.user, otherUser: otherUser });
+
+    } catch (err) {
+      console.log(err);
+    }
   },
 
   getFeed: async (req, res) => {
