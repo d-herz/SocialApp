@@ -10,7 +10,9 @@
 
 <h3 align="left">Intro:</h3>
 <p align="left">
-Introducing: SocialApp! A social media platform free from marketing and influencers. This Full-Stack project features Local Authorization, unique account creation, and user password salting and hashing for security. Once a user has signed-up on the platform, they will have the ability to make image posts with a title and a caption, view other user's posts on the 'Feed', 'Like' and Comment on any post, and also 'Like' other user's comments. They also have the ability to edit/update their post title and caption, and delete their posts or comments. A future update will include the ability to edit/update their comments.
+Introducing: SocialAyy! A social media platform free from marketing and influencers. </p>
+
+<p align="left"> This app is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization and user-account creation, all users will have the ability to make image posts with a title and a caption, view the posts made by other users on the 'Feed', 'Like' and Comment on any post, and also 'Like' other user's comments. Their are inidividual profile pages for each user that can be visited and viewed by the other users. They also have the ability to edit/update their own post titles and captions, and delete their posts or comments. A future update will include the ability to edit/update their comments.
 </p>
 
 
@@ -60,14 +62,14 @@ Introducing: SocialApp! A social media platform free from marketing and influenc
 <p align="left">
 I've recently added:
 <ul>
+<li> Visit other user's profiles </li>
+<li> Like and Comment counts shown on each post in the feed</li>
+<li> Local Timestamps and Username's on Posts and Comments</li>
 <li> 'Edit Post' functionality </li>
-<li> Ability to Comment on posts </li>
-<li> Ability to 'Like' and Delete comments</li> 
-<li> 'Like' and 'Comment' counts on each post in main feed</li>
-<li> Username displayed on Posts and Comments </li>
-<li> Updated Feed styling and presentation </li>
-<li> Popout 'Modals' for Post and Comment Creation </li>
-<li> Local time-stamps on posts and comments </li>
+<li> Liking Comments </li>
+<li> Commenting on posts</li>
+<li>  </li>
+<li> </li>
 
 <!----- <li> </li> ---->
 </ul>
