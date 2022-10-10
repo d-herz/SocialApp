@@ -67,7 +67,7 @@ module.exports = {
         createdBy: req.user.userName,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      res.redirect(`/profile/${req.user.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -119,7 +119,7 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id }); //Post is the model, here we remove the post from the collection
       console.log("Deleted Post");
-      res.redirect("/profile");
+      res.redirect(`/profile/${req.user.id}`);
     } catch (err) {
       res.redirect("/profile");
     }
