@@ -1,11 +1,11 @@
 <%- include('partials/headerProfile') -%>
 
 <!-- Top Section With user Info -->
-<section class=" pt-5 pb-0 p-3 pt-sm-4 bg-black ">
+<section class=" pt-5 pb-0 p-3 pt-sm-4 bg-black bg-opacity-75 ">
   <div class="container-md pt-4 ">
 
     <!-- DIV FOR PROFILE TOP -->
-    <div class="row">
+    <div class="row" id="topDiv">
       <!-- Return To feed & Logout button -->
       <!-- <div class="row justify-content-center mt-5">
             <a class="btn btn-primary w-25 mx-2" href="/feed">Return to Feed</a>
@@ -32,7 +32,7 @@
 </section>
 
 <!-- Section for Post data -->
-<section class=" p-2 p-lg-1 bg-black">
+<section class=" p-2 p-lg-1 bg-black bg-opacity-75">
   <div class="container-md  ">
     
     <!-- "Your Posts" Container -->
@@ -50,7 +50,7 @@
 </section>
 
 <!-- Section for Posts and Cards -->
-<section class=" p-3 p-sm-5 p-lg-5 bg-black ">
+<section class=" p-3 p-sm-5 p-lg-5 bg-black bg-opacity-75 ">
   <div class="container-md ">
     <div class="row text-center g-4">
 
@@ -61,7 +61,7 @@
           
           <div class="m-4 card-group ">
             
-            <div class="card bg-dark text-light text-center border-warning rounded-4 border-3 mb-md-5 mb-3">
+            <div class="card bg-dark text-light text-center border-warning rounded-4 border-3 bg-opacity-75 mb-md-5 mb-3">
     
               <!-- Card Header -->
               <div class="card-header  justify-content-between text-center align-items-center">
@@ -106,16 +106,18 @@
 </section>
 
 <!-- Bottom Section for Buttons -->
-<section class="  p-3  p-lg-5">
+<section class="p-3 p-lg-5 bg-black bg-opacity-75">
   <div class="container-md  ">
 
     <!-- Return To Top and Feed Buttons -->
     <div class="row justify-content-center mt-1">
-      <a class="btn btn-warning w-25" href="#topH2">Back to Top</a>
+      <a class="btn btn-warning btn-lg w-25" href="#topDiv">Back to Top</a>
+      
     </div>
 
     <div class="row justify-content-center mt-3">
-      <a class="btn btn-warning w-25" href="/feed">Return to Feed</a>
+      <!-- <a class="btn btn-warning w-25" href="/feed">Return to Feed</a> -->
+      <button class="btn btn-warning btn-lg w-25 m-2"><a class="text-decoration-none text-black" href="/feed">Visit Feed</a></button>
     </div>
   </div>
 
