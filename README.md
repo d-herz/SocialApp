@@ -12,7 +12,7 @@
 <p align="left">
 Introducing: SocialAyy! A social media platform free from marketing and influencers. </p>
 
-<p align="left"> This app is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization and user-account creation, all users will have the ability to make image posts with a title and a caption, view the posts made by other users on the 'Feed', 'Like' and Comment on any post, and also 'Like' other user's comments. Their are inidividual profile pages for each user that can be visited and viewed by the other users. They also have the ability to edit/update their own post titles and captions, and delete their posts or comments. A future update will include the ability to edit/update their comments.
+<p align="left"> This app is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization and User-account creation, all Users will have the ability to make image posts with a title and a caption, view the posts made by other Users on the 'Feed', 'Like' and Comment on any post, and also 'Like' other Users comments. There are individual profile pages for each User which can be visited and viewed by the other Users. Each User also has the ability to edit/update their own post titles and captions, and delete their posts or comments. A future update will include the ability to edit/update their comments.
 </p>
 
 
@@ -62,14 +62,12 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <p align="left">
 I've recently added:
 <ul>
-<li> Visit other user's profiles </li>
+<li> Ability to visit other user's profiles </li>
 <li> Like and Comment counts shown on each post in the feed</li>
-<li> Local Timestamps and Username's on Posts and Comments</li>
+<li> Local timestamps and Username's on all Posts and Comments</li>
 <li> 'Edit Post' functionality </li>
 <li> Liking Comments </li>
 <li> Commenting on posts</li>
-<li>  </li>
-<li> </li>
 
 <!----- <li> </li> ---->
 </ul>
