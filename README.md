@@ -6,7 +6,7 @@
 </p> 
 
 <h3 align="center">An in Development Full-Stack Social Network Platform</h3>
-<!-- <h3 align="center"> <a href="https://quotes-of-breakingbad.netlify.app/">Visit the live site</a></h3> -->
+<h3 align="center"> <a href="https://socialayy.herokuapp.com/">Visit the live site</a></h3> 
 
 <h3 align="left">Intro:</h3>
 <p align="left">
