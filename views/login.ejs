@@ -14,6 +14,47 @@
           Already a member? Login below!
         </p>
 
+        <div class="container">
+          <div class="row justify-content-center text-light">
+            <section class="col-6 mt-5 mt-sm-1">
+              <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+              <div class="alert alert-danger"><%= el.msg %></div>
+              <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+              messages.info.forEach( el => { %>
+              <div class="alert alert-info"><%= el.msg %></div>
+              <% }) %> <% } %>
+        
+              <h3 class="mb-4">Login:</h3>
+              <form action="/login" method="POST">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Email address:</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    name="email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    name="password"
+                  />
+                </div>
+                <button type="submit" class="btn btn-warning">Submit</button>
+              </form>
+            </section>
+          </div>
+      
+      
+        </div>
+
         <!-- <a href="/login" class="btn btn-primary btn-lg" >Login!</a> -->
         <!-- <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#login">Login!</button> -->
 
@@ -28,46 +69,6 @@
 
   </div>
 
-  <div class="container">
-    <div class="row justify-content-center text-light">
-      <section class="col-6 mt-5 mt-sm-1">
-        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-        <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-        messages.info.forEach( el => { %>
-        <div class="alert alert-info"><%= el.msg %></div>
-        <% }) %> <% } %>
-  
-        <h3 class="mb-4">Login:</h3>
-        <form action="/login" method="POST">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address:</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              name="email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              name="password"
-            />
-          </div>
-          <button type="submit" class="btn btn-warning">Submit</button>
-        </form>
-      </section>
-    </div>
-
-
-  </div>
 
 </section>
 
