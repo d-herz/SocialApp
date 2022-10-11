@@ -2,12 +2,12 @@
 
 <!-- INDEX/HOME -->
 <section class="bg-black text-light p-5 p-md--0 py-md-5 text-center text-sm-start">
-  <div class="container pt-5">
+  <div class="container pt-5 pt-sm-2">
 
     <div class="d-sm-flex align-items-center justify-content-between text-light">
 
-      <div>
-        <h1 >Welcome to <span class="text-warning"> Social Ayy!</span></h1>
+      <div class="container text-center">
+        <h1 >Welcome to <span class="text-warning"> SocialAyy!</span></h1>
         <p class="lead my-4">
           New to Social Ayy? Signup below for your chance to unlock one of the most exclusive social media experiences on the internet:
         </p>
@@ -20,7 +20,7 @@
         <!-- <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#signUp">Signup!</button> -->
       </div>
 
-      <img class="img-fluid w-50 d-none d-sm-block" src="/imgs/image-share.svg" alt="">
+      <img class="img-fluid w-50 d-none d-sm-block" src="/css/social-3.png" alt="">
 
     </div>
 
@@ -28,7 +28,7 @@
 
   <div class="container">
     <div class="row justify-content-center text-light">
-      <section class="col-6 mt-5">
+      <section class="col-6 mt-5 mt-sm-1">
           <% if (locals.messages.errors) { %>
               <% messages.errors.forEach( el => { %>
                   <div class="alert alert-danger"><%= el.msg %></div>
