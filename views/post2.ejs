@@ -5,8 +5,6 @@
 
     <!-- Return to feed & Profile buttons -->
     <div class="d-flex justify-content-center mt-5 mt-lg-3 mb-0">
-      <!-- <a class="btn btn-warning w-50  m-2 " href="/profile/<%= user.id %>">Return to Profile</a>
-      <a class="btn btn-warning w-50  m-2" href="/feed">Return to Feed</a> -->
 
       <button class="btn btn-warning btn-lg "><a class="text-decoration-none text-black" href="/profile/<%= user._id %> ">Your Profile</a></button>
 
@@ -41,9 +39,6 @@
           <div class="card-body text-dark py-1 text-center ">
 
             <!-- Post Image -->
-            <!-- <span class="d-flex justify-content-center">
-              <img class="img-fluid " src="<%= post.image%>" alt="">
-            </span> -->
 
             <%if(post.user == user.id){ %>
               <!-- your profile if it's your post -->
@@ -83,13 +78,7 @@
                     <button class="btn btn-danger fa fa-trash mx-3" type="submit"></button>
                   </form>
 
-
                 </div>
-  
-                <!-- Delete Post
-                <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-2"> 
-                  <button class="btn btn-danger fa fa-trash" type="submit"></button>
-                </form> -->
   
                 <%}%>
             </div>
@@ -165,8 +154,6 @@
       </div>
       <% } %>
 
-
-
     <!-- end of post card -->
     </div> 
 
@@ -188,7 +175,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       
-
       <div class="modal-body">
 
         <form action="/comment/createComment/<%=post._id%>" method="POST" class="" id="create-comment"> 
@@ -219,7 +205,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       
-
       <div class="modal-body">
 
         <form action="/post/editPost/<%= post.id %>?_method=PUT"   method="POST" class="" id="edit-post"> 
@@ -258,7 +243,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       
-      
       <div class="modal-body">
         <form action="/comment/editComment/<%= commentId[i] %>?_method=PUT"  method="POST" id="edit-comment"> 
           <div class="mb-3">
@@ -270,7 +254,6 @@
         </form>
       </div>
       
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
@@ -282,8 +265,6 @@
   
 </div>
 <% } %>
-
-
 
 
 

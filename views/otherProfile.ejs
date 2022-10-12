@@ -6,23 +6,17 @@
 
     <!-- DIV FOR PROFILE TOP -->
     <div class="row">
-      <!-- Return To feed & Logout button -->
-      <!-- <div class="row justify-content-center mt-5">
-            <a class="btn btn-primary w-25 mx-2" href="/feed">Return to Feed</a>
-            <a href="/logout" class="col-3 btn btn-primary mx-2">Logout</a>
-          </div>  -->
 
       <!-- User Info and Logout -->
       <div class="row justify-content-center mt-2 mt-sm-4 text-center text-light" id="topDiv">
         <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to <strong class="text-capitalize"><%= otherUser.userName %>'s</strong> Profile! </h2>
-        <!-- <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p> -->
+        
         <p class="mt-1"><strong>Email</strong>: <%= otherUser.email %></p>
-          <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
+        
       </div>
 
-      <!-- Create Post Button (opens modal) -->
+      <!-- Your Profile/ Feed Buttons  -->
       <div class="d-flex justify-content-center mt-3 mb-0">
-        <!-- <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#createPost">Return to your Profile</button> -->
         
         <button class="btn btn-warning btn-lg "><a class="text-decoration-none text-black" href="/profile/<%= user._id %> ">Your Profile</a></button>
 
@@ -102,7 +96,6 @@
       </div>
     </div>
 
-
   </div>
 
 </section>
@@ -122,55 +115,6 @@
   </div>
 
 </section>
-
-
- 
-
-
-
-<!-- MODAL FOR POST CREATION -->
-<!-- <div class="modal fade" id="createPost" tabindex="-1" >
-    <div class="modal-dialog">
-
-      <div class="modal-content"> 
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        
-
-        <div class="modal-body">
-
-          <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="" id="create-post"> 
-            <div class="mb-3">
-              <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="title" name="title">
-            </div>
-  
-            <div class="mb-3">
-              <label for="caption" class="form-label">Caption</label>
-              <textarea class="form-control" id="caption" name="caption"></textarea>
-            </div>
-  
-            <div class="mb-3">
-              <label for="imgUpload" class="form-label">Image</label>
-              <input type="file" class="form-control" id="imageUpload" name="file">
-            </div>
-          </form>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-          <button type="submit" class="btn btn-primary" value="Upload" form="create-post">Submit</button>
-        </div>
-
-      </div>
-    </div>
-</div> 
-
-
-
 
 
 <%- include('partials/footer') -%>

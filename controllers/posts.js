@@ -13,8 +13,6 @@ module.exports = {
       console.log(err);
     }
   },
-
-  //TODO add ability to "get" someone elses profile
   getOtherProfile: async (req, res) => {
     try {
       const otherUser = await User.findById(req.params.id) 
@@ -27,7 +25,6 @@ module.exports = {
       console.log(err);
     }
   },
-
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
