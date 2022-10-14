@@ -12,7 +12,7 @@
 <p align="left">
 Introducing: SocialAyy! A social media platform free from marketing and influencers. </p>
 
-<p align="left"> Designed with a mobile-first approach, SocialAyy! is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization and User-account creation. Authenticated users have the ability to make image posts with a title and a caption, view the posts made by other Users on the 'Feed', 'Like' and Comment on any post, and also 'Like' other Users comments. </p>
+<p align="left"> Designed with a responsive mobile-first approach, SocialAyy! is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization and User-account creation. Authenticated users have the ability to make image posts with a title and a caption, view the posts made by other Users on the 'Feed', 'Like' and Comment on any post, and also 'Like' other Users comments. </p>
 
 <p align="left"> There are individual profile pages for each User which can be visited and viewed by the other Users. Each User also has the ability to edit/update their own post titles and captions, and delete their posts or comments. A planned future update will include the ability to edit/update comments, as well as nested commenting.
 </p>
@@ -62,13 +62,12 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/userProfile3.png" alt="" width= "375" height="auto" />
 </p> 
 
-<h4 align="left" > Post & Add Comment Modal: </h4>
+<h4 align="left" > Post View & Add Comment Modal: </h4>
 <p align="center">
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post3.png" alt="" width= "375" height="auto" />
   <span> <span>
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/addComment3.png" alt="" width= "375" height="auto" />
 </p> 
-
 
 
 
