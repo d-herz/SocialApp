@@ -42,7 +42,7 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <h4 align="left" > Login & Signup forms: </h4>
 <p align="center">
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/login3.png" alt="" width= "375" height="auto"   />
-  <span> <span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;  </span>
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/signup3.png" alt="" width= "375" height="auto"   />
 </p> 
 
@@ -50,7 +50,7 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <h4 align="left" > Profile & Creat Post Modal: </h4>
 <p align="center">
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile3.png" alt="" width= "375" height="auto"   />
-  <span> <span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;  </span>
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/createPost3.png" alt="" width= "375" height="auto"   />
 </p> 
 
@@ -58,14 +58,14 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <h4 align="left" > Feed & Other User's Profile: </h4>
 <p align="center">
    <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/feed3.png" alt="" width= "375" height="auto" />
-   <span> <span>
+   <span>&nbsp;&nbsp;&nbsp;&nbsp;  </span>
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/userProfile3.png" alt="" width= "375" height="auto" />
 </p> 
 
 <h4 align="left" > Post View & Add Comment Modal: </h4>
 <p align="center">
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/post3.png" alt="" width= "375" height="auto" />
-  <span> <span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;  </span>
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/addComment3.png" alt="" width= "375" height="auto" />
 </p> 
 
