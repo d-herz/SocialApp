@@ -1,6 +1,7 @@
 const multer = require("multer");
 const path = require("path");
 
+//Using Multer to check image file types for upload
 module.exports = multer({
   storage: multer.diskStorage({}),
   fileFilter: (req, file, cb) => {

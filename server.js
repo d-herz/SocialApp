@@ -18,7 +18,7 @@ require("dotenv").config({ path: "./config/.env" });
 // Passport config
 require("./config/passport")(passport);
 
-//Connect To Database
+//Connect To Database (method from database config file)
 connectDB();
 
 //Using EJS for views
@@ -34,7 +34,7 @@ app.use(express.json());
 //Logging
 app.use(logger("dev"));
 
-//Use forms for put / delete
+//Use forms for put / delete requests
 app.use(methodOverride("_method"));
 
 // Setup Sessions - stored in MongoDB

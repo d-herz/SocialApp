@@ -8,16 +8,15 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth"); //This is so 
 //Post Routes
 router.get("/:postId", ensureAuth, postsController.getPost); //remember colon syntax grabs everything after the slash, and we store it in a variable called 'id', which is referenced in the posts controller (and also "ensureAuth" is middleware that makes sure you are logged in)
 
-
 router.post("/createPost", upload.single("file"), postsController.createPost); //upload.single("file") is middleware (multer)
 
-
+//Route for liking a post (updates like count)
 router.put("/likePost/:id", postsController.likePost);
 
-
+//Route for editing a post (update request)
 router.put("/editPost/:id", postsController.editPost)
 
-
+//Route for deleting a post
 router.delete("/deletePost/:id", postsController.deletePost);
 
 module.exports = router;

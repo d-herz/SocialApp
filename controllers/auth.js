@@ -2,6 +2,7 @@ const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
 
+//Get User profile if user is already logged in
 exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect(`/profile/${req.user.id}`);
@@ -11,6 +12,7 @@ exports.getLogin = (req, res) => {
   });
 };
 
+//Get User profile upon logging in
 exports.postLogin = (req, res, next) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
@@ -44,6 +46,7 @@ exports.postLogin = (req, res, next) => {
   })(req, res, next);
 };
 
+//Log out and destroy session, redirect to landing page (index.ejs)
 exports.logout = (req, res) => {
   req.logout( () => {
     console.log('User has logged out')

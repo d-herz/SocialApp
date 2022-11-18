@@ -1,7 +1,7 @@
 {
   "name": "socialayy",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "SocialAyy!",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
