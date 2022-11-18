@@ -6,7 +6,7 @@
 </p> 
 
 <h3 align="center">An in Development Full-Stack Social Network Platform</h3>
-<h3 align="center"> <a href="https://socialayy.herokuapp.com/">Visit the live site</a></h3> 
+<h3 align="center"> <a href="https://socialayy.cyclic.app/">Visit the live site</a></h3> 
 
 <h3 align="left">Intro:</h3>
 <p align="left">
@@ -25,7 +25,7 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <p align="left">
 <ul>
 <li> Currently still in development </li>
-<li> Server Side Rendering via EJS using BootStrap </li>
+<li> HTML Templating via EJS and Styling with BootStrap </li>
 <li> Server logic written in MVC structure using Node.js and Express</li>
 <li> Authorization provided via Passport.js </li> 
 <li> Database storage for posts and users provided via MongoDB/Mongoose </li>
