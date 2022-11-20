@@ -40,7 +40,7 @@ module.exports = {
       const comments = await Comment.find({post: req.params.postId}).sort({ createdAt: "asc" });
       
       const commentId = comments.map( (x,i) => x._id ) // maybe it needs to loop through the array of objects, and pull out the id's?
-      console.log(`Wtf is this shit: ${commentId}`)
+      console.log(`This is the commentId: ${commentId}`)
 
       res.render("post2.ejs", { post: post, user: req.user, comments: comments, commentId: commentId});
       console.log(`Check out these ${comments}`)
