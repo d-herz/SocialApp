@@ -12,7 +12,11 @@
 <p align="left">
 Introducing: SocialAyy! A Social Media platform free from marketing and influencers. </p>
 
-<p align="left"> Designed with a responsive mobile-first approach, SocialAyy! is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization with Unique user accounts, users can upload and post their favorite images and content. These posts will appear in the main 'Feed' along with the other User posts, as well as on the User's unique profile. Each individual post can be interacted with via the like and comment features, and the original content can be updated or edited by the original User. Future optimizations include the ability to edit/update comments and to allow for nested commenting.
+<p align="left"> Designed with a responsive mobile-first approach and featuring local authentication with unique user accounts, SocialAyy! is made for sharing your favorite photos and content with other users. 
+</p>
+  
+<p align="left">
+  These posts will appear in the main 'Feed' along with the other user posts, as well as in the user's unique profile. Each individual post can be interacted with via the like and comment features, and the original content can be updated or edited by the original poster. Among other optimizations, future updates will include the ability to edit and update comments and to have nested commenting.
 </p>
 
 <p align="left">
