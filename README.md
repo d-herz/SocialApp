@@ -6,15 +6,16 @@
 </p> 
 
 <h3 align="center">An in Development Full-Stack Social Network Platform</h3>
-<h3 align="center"> <a href="https://socialayy.cyclic.app/">Visit the live site</a></h3> 
+<h3 align="center"> <a href="https://socialayy.cyclic.app/">Visit the live beta site</a></h3> 
 
 <h3 align="left">Intro:</h3>
 <p align="left">
-Introducing: SocialAyy! A social media platform free from marketing and influencers. </p>
+Introducing: SocialAyy! A Social Media platform free from marketing and influencers. </p>
 
-<p align="left"> Designed with a responsive mobile-first approach, SocialAyy! is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization and User-account creation. Authenticated users have the ability to make image posts with a title and a caption, view the posts made by other Users on the 'Feed', 'Like' and Comment on any post, and also 'Like' other Users comments. </p>
+<p align="left"> Designed with a responsive mobile-first approach, SocialAyy! is made for sharing your favorite photos while liking and interacting with others on the platform. Featuring Local-Authorization with Unique user accounts, users can upload and post their favorite images and content. These posts will appear in the main 'Feed' along with the other User posts, as well as on the User's unique profile. Each individual post can be interacted with via the like and comment features, and the original content can be updated or edited by the original User. Future optimizations include the ability to edit/update comments and to allow for nested commenting.
+</p>
 
-<p align="left"> There are individual profile pages for each User which can be visited and viewed by the other Users. Each User also has the ability to edit/update their own post titles and captions, and delete their posts or comments. A planned future update will include the ability to edit/update comments, as well as nested commenting.
+<p align="left">
 </p>
 
 
@@ -24,12 +25,13 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <h3 align="left">Quick facts about this project:</h3>
 <p align="left">
 <ul>
-<li> Currently still in development </li>
-<li> HTML Templating via EJS and Styling with BootStrap </li>
-<li> Server logic written in MVC structure using Node.js and Express</li>
-<li> Authorization provided via Passport.js </li> 
-<li> Database storage for posts and users provided via MongoDB/Mongoose </li>
-<li> Database storage for images provided by Cloudinary </li>
+<li> Still in development, current beta version is running on Cyclic.sh </li>
+<li> Server API written with Express/Node.js</li>
+<li> Embedded JavaScript Templating/EJS </li>
+<li> Custom styling with CSS & BootStrap</li>
+<li> Local Authentication using Passport.js </li> 
+<li> MongoDB and Mongoose for non-image database storage</li>
+<li> Cloudinary for additional DB storage</li>
 <!----- <li> </li> ---->
 </ul>
 </p>
@@ -75,12 +77,10 @@ Introducing: SocialAyy! A social media platform free from marketing and influenc
 <p align="left">
 I've recently added:
 <ul>
-<li> Ability to visit other user's profiles </li>
-<li> Like and Comment counts shown on each post in the feed</li>
-<li> Local timestamps and Username's on all Posts and Comments</li>
-<li> 'Edit Post' functionality </li>
-<li> Liking Comments </li>
-<li> Commenting on posts</li>
+<li> Unique User profiles</li>
+<li> 'Edit Post' functionality</li>
+<li> Posting and liking comments</li>
+<li> Timestamps on Posts and Comments</li>
 
 <!----- <li> </li> ---->
 </ul>
@@ -100,26 +100,3 @@ I've recently added:
 
 
 
-
-<!-- 
-# Install
-
-`npm install`
-
----
-
-# Things to add
-
-- Create a `.env` file in config folder and add the following as `key = value`
-  - PORT = 2121 (can be any port example: 3000)
-  - DB_STRING = `your database URI`
-  - CLOUD_NAME = `your cloudinary cloud name`
-  - API_KEY = `your cloudinary api key`
-  - API_SECRET = `your cloudinary api secret`
-
----
-
-# Run
-
-`npm start`
- -->
