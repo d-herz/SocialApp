@@ -48,7 +48,6 @@ app.use(
       mongoUrl: process.env.DB_STRING,
       dbName: "socialApp", //present in connection string, shouldn't need it here (but won't work without it here for some reason)
       stringify: false,
-      autoRemove: 'native',
       // client: mongoose.connection.getClient(),
     }),
   })
