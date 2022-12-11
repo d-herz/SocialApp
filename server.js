@@ -41,14 +41,15 @@ app.use(methodOverride("_method"));
 app.use(
   session({
     secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: false,
+    saveUninitialized: false, //don't create session until something stored
+    resave: false, //don't save session if unmodified
     store: MongoStore.create({
-      mongoUrl: process.env.DB_STRING,
-      dbName: "socialApp",
-      stringify: false,
-      // client: mongoose.connection.getClient(),
       clientPromise: clientP,
+      mongoUrl: process.env.DB_STRING,
+      dbName: "socialApp", //present in connection string, shouldn't need it here (but won't work without it here for some reason)
+      stringify: false,
+      autoRemove: 'native',
+      // client: mongoose.connection.getClient(),
     }),
   })
 );
