@@ -53,7 +53,7 @@ app.use(
   })
 );
 
-// Passport middleware does 
+// Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
