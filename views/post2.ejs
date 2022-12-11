@@ -26,7 +26,7 @@
             <h2 class="card-title my-1 text-center">
               <%= post.title %>
             </h2>
-            <h6 class="text-capitalize fst-italic mx-1 mt-1 mb-0 fs-6">User:&nbsp; <%= post.createdBy %> </h6>
+            <h6 class="text-capitalize fst-italic mx-1 mt-1 mb-0 fs-6">User:&nbsp;<a href="/userProfile/<%= post.user %>"><%= post.createdBy %></a> </h6>
             <span class="text-capitalize fst-italic mx-1 mt-3 fs-6  ">&nbsp; <%= post.createdAt.toLocaleDateString()%> @ <%= post.createdAt.toLocaleTimeString()%></span>
             <!-- UserName, Date and Time  -->
             <!-- <div class="d-flex justify-content-between text-center mt-0">

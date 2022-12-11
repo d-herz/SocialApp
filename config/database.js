@@ -1,20 +1,21 @@
 const mongoose = require("mongoose");
+const MongoStore = require('connect-mongo');
+require("dotenv").config({ path: "./config/.env" });
 
-//Connect to mongoDB (used in server.js)
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.DB_STRING, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    });
-
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
+const clientP = mongoose.connect(
+  `${process.env.DB_STRING}`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   }
-};
+)
+  .then(m => m.connection.getClient())
+  .then(() => {
+    console.log('Connected to DB YESSSS')
+  })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  });
 
-module.exports = connectDB;
+module.exports = clientP;

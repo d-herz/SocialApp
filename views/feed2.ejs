@@ -25,7 +25,7 @@
             <h2 class="card-title mt-1 mb-0 text-center" id="post-title">
               <%= posts[i].title %>
             </h2>
-            <h6 class="text-capitalize fst-italic mx-1 mt-1 mb-0 fs-6">User:&nbsp; <%= posts[i].createdBy %> </h6>
+            <h6 class="text-capitalize fst-italic mx-1 mt-1 mb-0 fs-6">User:&nbsp; <a href="/userProfile/<%= posts[i].user %>"><%= posts[i].createdBy %></a></h6>
             <span class="text-capitalize fst-italic mx-1 mt-3 fs-6 text-end "> <%= posts[i].createdAt.toLocaleDateString()%>, <%= posts[i].createdAt.toLocaleTimeString()%></span>
 
             <!-- UserName, Date and Time  -->
