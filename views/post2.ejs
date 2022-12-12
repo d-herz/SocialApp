@@ -60,7 +60,6 @@
 
             <!-- Container for Like button/form  -->
             <div class="d-flex justify-content-between text-center mt-2">
-              <!-- TODO: -->
               <!-- Like Button -->
               <form class="col-2" action="/post/likePost/<%= post.id %>/<%= user.id %>?_method=PUT" method="POST">
                 <button class="btn btn-warning fa fa-heart" type="submit"><%= post.likes %> </button>
@@ -129,7 +128,7 @@
             <!-- Likes, Edits, & deletes -->
             <div class="d-flex align-items-center my-1">
               <!-- Form for liking comment -->
-              <form class="" action="/comment/likeComment/<%= comments[i]._id %>?_method=PUT" method="POST">
+              <form class="" action="/comment/likeComment/<%= comments[i]._id %>/<%= user.id %>?_method=PUT" method="POST">
                 <button class="btn btn-warning fa fa-heart ms-2" type="submit"><%= comments[i].likes %></button>
               </form>
 

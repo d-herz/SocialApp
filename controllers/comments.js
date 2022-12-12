@@ -29,20 +29,32 @@ module.exports = {
   },
   likeComment: async (req, res) => {
     try {
-      const comment = await Comment.findOneAndUpdate( 
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 }, 
-        }
-      );
-      console.log(req.params.id)
-      console.log("Likes +1");
+      const comment = await Comment.findById(req.params.commentId)
+      let liker = req.params.userId
+
+      if (comment.usersWhoLiked.includes(liker)) {
+        await Comment.findOneAndUpdate(
+          { _id: req.params.commentId },
+          {
+            $inc: { likes: -1 },
+            $pull: { usersWhoLiked: liker }
+          }
+        );        
+      } else {
+        await Comment.findOneAndUpdate( 
+          { _id: req.params.commentId },
+          {
+            $inc: { likes: 1 }, 
+            $push: { usersWhoLiked: liker }
+          }
+        );
+      }
+      console.log("Likes Updated");
       res.redirect(`/post/${comment.post}/#commentDiv`);
     } catch (err) {
       console.log(err);
     }
   },
-
   editComment: async (req, res) => {
     try{
       console.log(`this is supposed to be the comment id: ${req.params.commentId}`)
@@ -63,11 +75,9 @@ module.exports = {
       console.log(err)
     }
   },
-
   deleteComment: async (req, res) => {
     try {
-
-      const comment = await Comment.findById({ _id: req.params.id }); //the .id is our choice, could do commentId (and be sure to specify in EJS and also put it in the router path)
+      const comment = await Comment.findById({ _id: req.params.id }); 
       //adding a decrementor for updating numOfComments property on post
       const post = await Post.findOneAndUpdate(
         { _id: comment.post },

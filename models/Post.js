@@ -22,7 +22,6 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  //TODO: add array of likers
   usersWhoLiked: {
     type: [String],
     required: true,

@@ -7,7 +7,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth"); //This is so 
 router.post("/createComment/:id", commentsController.createComment); 
 
 //adding comment likes
-router.put("/likeComment/:id", commentsController.likeComment);
+router.put("/likeComment/:commentId/:userId", commentsController.likeComment);
 
 //TODO working on adding ability to editComment (not working yet)
 router.put("/editComment/:commentId", commentsController.editComment)

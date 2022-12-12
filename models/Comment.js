@@ -9,9 +9,13 @@ const CommentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  usersWhoLiked: {
+    type: [String],
+    required: true,
+  },
   post: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Post", //here we are referencing our "User" model from our User schema
+    ref: "Post", 
   },
   createdBy:{
     type: String,
