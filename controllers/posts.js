@@ -40,10 +40,10 @@ module.exports = {
       const comments = await Comment.find({post: req.params.postId}).sort({ createdAt: "asc" });
       
       const commentId = comments.map( (x,i) => x._id ) // maybe it needs to loop through the array of objects, and pull out the id's?
-      console.log(`This is the commentId: ${commentId}`)
+      // console.log(`This is the commentId: ${commentId}`)
 
       res.render("post2.ejs", { post: post, user: req.user, comments: comments, commentId: commentId});
-      console.log(`Check out these ${comments}`)
+      // console.log(`Check out these ${comments}`)
     } catch (err) {
       console.log(err);
     }
@@ -69,16 +69,36 @@ module.exports = {
       console.log(err);
     }
   },
+  // TODO: Add likers to array
   likePost: async (req, res) => {
     try {
-      await Post.findOneAndUpdate( //Post is the name of the model (first parameter) in post model file
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 }, //$inc is a increment thing included with mongo/mongoose. This is a number because it is defined in the schema as such
-        }
-      );
-      console.log("Likes +1");
-      res.redirect(`/post/${req.params.id}/#commentDiv`);
+      const post = await Post.findById(req.params.postId);
+      let liker = req.params.userId;
+
+      if (post.usersWhoLiked.includes(liker)) {
+        await Post.findOneAndUpdate( //Post is the name of the model (first parameter) in post model file
+          { _id: req.params.postId },
+
+          {
+            $inc: { likes: -1 }, //$inc is a increment thing included with mongo/mongoose. This is a number because it is defined in the schema as such
+            $pull: { usersWhoLiked: liker }
+          }
+        ); 
+      } else {
+        
+        await Post.findOneAndUpdate( //Post is the name of the model (first parameter) in post model file
+          { _id: req.params.postId },
+          
+          {
+            $inc: { likes: 1 }, //$inc is a increment thing included with mongo/mongoose. This is a number because it is defined in the schema as such
+            $push: { usersWhoLiked: liker}
+          }
+        );
+
+      }
+        
+      console.log("Likes Updated");
+      res.redirect(`/post/${req.params.postId}/#commentDiv`);
     } catch (err) {
       console.log(err);
     }

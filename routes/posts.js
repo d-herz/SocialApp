@@ -10,8 +10,9 @@ router.get("/:postId", ensureAuth, postsController.getPost); //remember colon sy
 
 router.post("/createPost", upload.single("file"), postsController.createPost); //upload.single("file") is middleware (multer)
 
+// TODO: Add likers to array
 //Route for liking a post (updates like count)
-router.put("/likePost/:id", postsController.likePost);
+router.put("/likePost/:postId/:userId", postsController.likePost);
 
 //Route for editing a post (update request)
 router.put("/editPost/:id", postsController.editPost)

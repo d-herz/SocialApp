@@ -60,9 +60,9 @@
 
             <!-- Container for Like button/form  -->
             <div class="d-flex justify-content-between text-center mt-2">
-  
-              <!-- LIke Button -->
-              <form class="col-2" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+              <!-- TODO: -->
+              <!-- Like Button -->
+              <form class="col-2" action="/post/likePost/<%= post.id %>/<%= user.id %>?_method=PUT" method="POST">
                 <button class="btn btn-warning fa fa-heart" type="submit"><%= post.likes %> </button>
               </form>
               

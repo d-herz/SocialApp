@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { array } = require("../middleware/multer");
 
 const PostSchema = new mongoose.Schema({
   title: {
@@ -19,6 +20,11 @@ const PostSchema = new mongoose.Schema({
   },
   likes: {
     type: Number,
+    required: true,
+  },
+  //TODO: add array of likers
+  usersWhoLiked: {
+    type: [String],
     required: true,
   },
   numOfComments:{
