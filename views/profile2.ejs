@@ -10,9 +10,10 @@
       <!-- User Info and Logout -->
       <div class="row justify-content-center mt-2 mt-sm-4 text-center text-light" id="topDiv">
         <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to your Profile, <strong class="text-capitalize"><%= user.userName %>!</strong></h2>
-        <!-- <p class="text-capitalize pt-2"><strong>User Name</strong>: <%= user.userName %></p> -->
+        
         <p class="mt-1"><strong>Email</strong>: <%= user.email %></p>
-          <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
+        <p class="mt-1"><strong>Member Since</strong>: <%= user.signUpDate.toLocaleDateString() %>
+        </p>
       </div>
 
       <!-- Create Post Button (opens modal) -->

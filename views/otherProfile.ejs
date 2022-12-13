@@ -12,6 +12,8 @@
         <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to <strong class="text-capitalize"><%= otherUser.userName %>'s</strong> Profile! </h2>
         
         <p class="mt-1"><strong>Email</strong>: <%= otherUser.email %></p>
+        <p class="mt-1"><strong>Member Since</strong>: <%= otherUser.signUpDate.toLocaleDateString() %>
+        </p>
         
       </div>
 
