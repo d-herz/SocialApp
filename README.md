@@ -53,7 +53,7 @@ Introducing: SocialAyy! A Social Media platform free from marketing and influenc
 </p> 
 
 
-<h4 align="left" > Profile & Creat Post Modal: </h4>
+<h4 align="left" > Profile & Create Post Modal: </h4>
 <p align="center">
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/profile3.png" alt="" width= "375" height="auto"   />
   <span>&nbsp;&nbsp;&nbsp;&nbsp;  </span>
