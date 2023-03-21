@@ -5,18 +5,18 @@
   <img src="https://github.com/d-herz/SocialApp/blob/main/screenshots-for-readme/home3.png" alt="" />
 </p> 
 
-<h3 align="center">An in Development Full-Stack Social Network Platform</h3>
+<h3 align="center">A Full-Stack Social Network Platform</h3>
 <h3 align="center"> <a href="https://socialayy.cyclic.app/">Visit the live beta site</a></h3> 
 
 <h3 align="left">Intro:</h3>
 <p align="left">
-Introducing: SocialAyy! A Social Media platform free from marketing and influencers. </p>
+Introducing: SocialAyy! A social network built with Express, Node, MongoDB, Passport, EJS, and Cloudinary.  </p>
 
-<p align="left"> Designed with a responsive mobile-first approach and featuring local authentication with unique user accounts, SocialAyy! is made for sharing your favorite photos and content with other users. 
+<p align="left"> Designed with a responsive mobile-first approach and featuring local authentication with unique user accounts. SocialAyy! is made for sharing your favorite photos with others.
 </p>
   
 <p align="left">
-  These posts will appear in the main 'Feed' along with the other user posts, as well as in the user's unique profile. Each individual post can be interacted with via the like and comment features, and the original content can be updated or edited by the original poster. Among other optimizations, future updates will include the ability to edit and update comments and to have nested commenting.
+  Shared photos appear in the user's profile as well as in the main 'Feed' along with the other user posts. Navigate to a particular post and leave a like and a comment, or edit your own posts. Nested commenting is a planned future optimization. 
 </p>
 
 <p align="left">
@@ -29,13 +29,13 @@ Introducing: SocialAyy! A Social Media platform free from marketing and influenc
 <h3 align="left">Quick facts about this project:</h3>
 <p align="left">
 <ul>
-<li> Still in development, current beta version is running on Cyclic.sh </li>
+<li> In development with beta version is running on Cyclic.sh </li>
 <li> Server API written with Express/Node.js</li>
 <li> Embedded JavaScript Templating/EJS </li>
 <li> Custom styling with CSS & BootStrap</li>
 <li> Local Authentication using Passport.js </li> 
 <li> MongoDB and Mongoose for non-image database storage</li>
-<li> Cloudinary for additional DB storage</li>
+<li> Cloudinary for image storage</li>
 <!----- <li> </li> ---->
 </ul>
 </p>
