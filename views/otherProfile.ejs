@@ -9,7 +9,7 @@
 
       <!-- User Info and Logout -->
       <div class="row justify-content-center mt-2 mt-sm-4 text-center text-light" id="topDiv">
-        <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to <strong class="text-capitalize"><%= otherUser.userName %>'s</strong> Profile! </h2>
+        <h2 class="text-center m-1 mt-4 text-light" id="topH2">Welcome to <strong class="text-capitalize"><%= otherUser.userName %>'s</strong> profile! </h2>
         
         <p class="mt-1"><strong>Email</strong>: <%= otherUser.email %></p>
         <p class="mt-1"><strong>Member Since</strong>: <%= otherUser.signUpDate.toLocaleDateString() %>
@@ -39,9 +39,9 @@
       
       <!-- Conditional for counting posts -->
       <%if(posts.length > 0 ){ %>   
-        <h4 class="text-center fst-italic mt-2 mb-0 text-light "> <span class="text-capitalize"> <%= otherUser.userName %> </span> has <%= posts.length %> Posts </h4>
+        <h4 class="text-center fst-italic mt-2 mb-0 text-light "> <span class="text-capitalize"> <%= otherUser.userName %> </span> has <%= posts.length %> posts </h4>
         <%} else { %> 
-        <h4 class="text-center fst-italic mt-2 mb-0 text-light">You have <%= posts.length %> Posts, share something! </h4>  
+        <h4 class="text-center fst-italic mt-2 mb-0 text-light">You have <%= posts.length %> posts, share something! </h4>  
       <% } %>
     </div>
   </div>
