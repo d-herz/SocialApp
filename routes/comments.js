@@ -1,17 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const commentsController = require("../controllers/comments");
-const { ensureAuth, ensureGuest } = require("../middleware/auth"); //This is so the 'ensureAuth' method can be called the the get('/:id') route
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Comments Routes - simplified for now
+// Create comments 
 router.post("/createComment/:id", commentsController.createComment); 
 
-//adding comment likes
+// Like comment
 router.put("/likeComment/:commentId/:userId", commentsController.likeComment);
 
-//TODO working on adding ability to editComment (not working yet)
+// Edit comment
 router.put("/editComment/:commentId", commentsController.editComment)
-
 
 router.delete("/deleteComment/:id", commentsController.deleteComment);
 

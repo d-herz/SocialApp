@@ -5,15 +5,12 @@ const Post = require("../models/Post");
 module.exports = {
   createComment: async (req, res) => {
     try {
-      
-      //Adding incrementor for updating numOfComments property on post
       const post = await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
           $inc: { numOfComments: 1}
         }
       )
-
       await Comment.create({
         comment: req.body.comment,
         likes: 0,
@@ -69,7 +66,6 @@ module.exports = {
       );
       console.log("Comment Updated");
       console.log(`${req.params.commentId} id for comment?`);
-
       res.redirect(`/post/${commentToEdit.post}/#commentDiv`);
     } catch (err) {
       console.log(err)
@@ -78,7 +74,6 @@ module.exports = {
   deleteComment: async (req, res) => {
     try {
       const comment = await Comment.findById({ _id: req.params.id }); 
-      //adding a decrementor for updating numOfComments property on post
       const post = await Post.findOneAndUpdate(
         { _id: comment.post },
         {

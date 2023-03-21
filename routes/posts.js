@@ -1,16 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const upload = require("../middleware/multer"); //upload is used below on the createPost route
+const upload = require("../middleware/multer"); 
 const postsController = require("../controllers/posts");
-const { ensureAuth, ensureGuest } = require("../middleware/auth"); //This is so the 'ensureAuth' method can be called the the get('/:id') route
-
+const { ensureAuth, ensureGuest } = require("../middleware/auth"); 
 
 //Post Routes
-router.get("/:postId", ensureAuth, postsController.getPost); //remember colon syntax grabs everything after the slash, and we store it in a variable called 'id', which is referenced in the posts controller (and also "ensureAuth" is middleware that makes sure you are logged in)
+router.get("/:postId", ensureAuth, postsController.getPost); 
 
-router.post("/createPost", upload.single("file"), postsController.createPost); //upload.single("file") is middleware (multer)
+router.post("/createPost", upload.single("file"), postsController.createPost); 
 
-// TODO: Add likers to array
 //Route for liking a post (updates like count)
 router.put("/likePost/:postId/:userId", postsController.likePost);
 

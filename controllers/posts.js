@@ -7,7 +7,6 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" });
-      
       res.render("profile2.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
@@ -16,18 +15,15 @@ module.exports = {
   getOtherProfile: async (req, res) => {
     try {
       const otherUser = await User.findById(req.params.id) 
-
       const posts = await Post.find({ user: req.params.id }).sort({ createdAt: "desc" });
-      
       res.render("otherProfile.ejs", { posts: posts, user: req.user, otherUser: otherUser });
-
     } catch (err) {
       console.log(err);
     }
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }); //Post is the model (required above), .lean() (mongoose) is for getting the raw object from mongo (documents on mongo, while similar to "objects" actually include more than you need) this will be faster
+      const posts = await Post.find().sort({ createdAt: "desc" }); 
       console.log(`These are your posts ${posts}`)
       res.render("feed2.ejs", { posts: posts, user: req.user });
     } catch (err) {
@@ -36,12 +32,10 @@ module.exports = {
   },
   getPost: async (req, res) => {
     try {
-      const post = await Post.findById(req.params.postId); //.id is the variable from the route
+      const post = await Post.findById(req.params.postId); 
       const comments = await Comment.find({post: req.params.postId}).sort({ createdAt: "asc" });
-      
-      const commentId = comments.map( (x,i) => x._id ) // maybe it needs to loop through the array of objects, and pull out the id's?
+      const commentId = comments.map( (x,i) => x._id ) 
       // console.log(`This is the commentId: ${commentId}`)
-
       res.render("post2.ejs", { post: post, user: req.user, comments: comments, commentId: commentId});
       // console.log(`Check out these ${comments}`)
     } catch (err) {
@@ -51,8 +45,7 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path); //upload is from the cloudinary package
-
+      const result = await cloudinary.uploader.upload(req.file.path); 
       await Post.create({
         title: req.body.title,
         image: result.secure_url, //result declared above
@@ -102,7 +95,7 @@ module.exports = {
     try{
       await Post.findOneAndUpdate(
         { _id: req.params.id },
-        { //didn't need $set apparently
+        { 
           title: req.body.title, 
           caption: req.body.caption,
         },
@@ -120,15 +113,11 @@ module.exports = {
   deletePost: async (req, res) => {
     try {
       // Find post by id
-      let post = await Post.findById({ _id: req.params.id }); //Post is the model. find the post using the id from the url (this makes sure the post exists before you 'destroy' it)
-      // Delete image from cloudinary
-
-      //find comments associated with post and delete along with post
+      let post = await Post.findById({ _id: req.params.id }); 
       const comments = await Comment.deleteMany({post: req.params.id})
 
-      await cloudinary.uploader.destroy(post.cloudinaryId); //post declared above. This line is to get rid of the picture on cloudinary
-      // Delete post from db
-      await Post.remove({ _id: req.params.id }); //Post is the model, here we remove the post from the collection
+      await cloudinary.uploader.destroy(post.cloudinaryId); 
+      await Post.remove({ _id: req.params.id }); 
       console.log("Deleted Post");
       res.redirect(`/profile/${req.user.id}`);
     } catch (err) {
