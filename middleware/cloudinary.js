@@ -1,6 +1,4 @@
-//For connecting to cloudinary
 const cloudinary = require("cloudinary").v2;
-
 
 //Needs access to the environment variables
 require("dotenv").config({ path: "./config/.env" });
